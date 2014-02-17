@@ -1,3 +1,5 @@
-name: Your New Jekyll Site
+# Site globals
+language: fr
+name: Neol.github.io
 markdown: redcarpet
 pygments: true
