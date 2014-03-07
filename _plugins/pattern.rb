@@ -1,5 +1,7 @@
-module Jekyll
+# encoding: UTF-8
 
+module Jekyll
+  # The Pattern class is used to render patterns.
   class Pattern
     include Comparable
     include Convertible
@@ -19,7 +21,7 @@ module Jekyll
 
     attr_accessor :site
     attr_accessor :data, :content, :output, :ext
-    attr_accessor :code, :id, :usage
+    attr_accessor :id, :markup_escaped, :section, :usage
 
     attr_reader :name
 
@@ -38,35 +40,29 @@ module Jekyll
 
       read_yaml(@base, name)
 
-      self.code = CGI.escapeHTML(self.content)
-      
-      if self.data.has_key?('id')
-        self.id = self.data['id'].to_s
-      else
-        self.id = name.match(MATCHER)[1]
-      end
-      
-      if self.data.has_key?('usage')
-        self.usage = self.data['usage'].to_s
-      end
+      self.markup_escaped = CGI.escapeHTML(content)
+      self.id = data.key?('id') ? data['id'].to_s : name.match(MATCHER)[1]
+      self.section = data.key?('section') ? [data['section'].to_s] : []
+      self.usage = data.key?('usage') ? data['usage'].to_s : nil
     end
 
     # Get the full path to the directory containing the pattern files
     def containing_dir(source, dir)
-      return File.join(source, dir, '_patterns')
+      File.join(source, dir, '_patterns')
     end
 
     # Add any necessary layouts to this pattern.
     #
-    # layouts      - A Hash of {"name" => "layout"}.
+    # layouts      - A Hash of {'name' => 'layout'}.
     # site_payload - The site payload hash.
     #
     # Returns nothing.
     def render(layouts, site_payload)
       # construct payload
       payload = site_payload
+      payload = payload.merge('page' => to_liquid)
 
-      do_layout(payload.merge({"page" => to_liquid}), layouts)
+      do_layout(payload, layouts)
     end
 
     # Obtain destination path.
@@ -77,17 +73,17 @@ module Jekyll
     def destination(dest)
       # The url needs to be unescaped in order to preserve the correct filename
       path = Jekyll.sanitized_path(dest, CGI.unescape(url))
-      path = File.join(path, "index.html") if path[/\.html$/].nil?
+      path = File.join(path, 'index.html') if path[/\.html$/].nil?
       path
     end
 
-    # Merge Pattern's attributes to Liquid data associated to the object
+    # Merge Pattern attributes to the data hash used by Liquid.
     def to_liquid
-      self.data.deep_merge({
-        "code" => self.code,
-        "content" => self.content,
-        "id" => self.id,
-        "usage" => self.usage
+      data.deep_merge({
+        'id' => id,
+        'markup_escaped' => markup_escaped,
+        'markup' => content,
+        'section' => section
       })
     end
 
@@ -98,11 +94,16 @@ module Jekyll
     #
     # Returns -1, 0, 1
     def <=>(other)
-      cmp = self.id <=> other.id
+      cmp = id <=> other.id
       if 0 == cmp
-       cmp = self.name <=> other.name
+        cmp = name <=> other.name
       end
-      return cmp
+      cmp
+    end
+
+    # Returns the shorthand String identifier of this Pattern.
+    def inspect
+      "<Pattern: #{id}>"
     end
   end
 end

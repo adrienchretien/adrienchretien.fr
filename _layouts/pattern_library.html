@@ -5,33 +5,41 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
   <meta name="viewport" content="width=device-width">
 
-  <title>{{ site.name }}'s {{ page.name }} page</title>
+  <title>{{ site.name }} {{ page.title }}</title>
 
-  <link rel="stylesheet" href="css/all.css" />{% if page.name == "pattern library" %}
+  <link rel="stylesheet" href="css/all.css" />{% if page.title == "pattern library" %}
   <link rel="stylesheet" href="css/pattern-library.css" />{% endif %}
 </head>
-{% if page.name == 'patchwork' %}<body>
-{% for pattern in page.patterns %}{{ pattern.content }}{% endfor %}
+{% if page.title == 'patchwork' %}<body>
+{% for pattern in page.patterns %}{{ pattern.markup }}{% endfor %}
 {% else %}<body class="pl-main">
-  <h1 class="pl-main-title">{{ site.name }}'s {{ page.name }} page</h1>
+  <h1 class="pl-h1">{{ site.name }} {{ page.title }}</h1>
 
   <div class="pl-nav">
-    <a class="pl-logo pl-link" href="/">{{ site.name }}</a>
+    <a class="pl-link" href="/">{{ site.name }}</a>
   </div>
 
+{% for section in page.sections %}
   <section class="pl-section">
-{% for pattern in page.patterns %}
+    <h2 class="pl-h2">{{ section | first }}</h2>
+{% assign patterns = section | last | sort %}{% for pattern in patterns %}
     <div class="pl-pattern" id="{{ pattern.id }}">
       <details class="pl-pattern-details">
-        <summary class="pl-pattern-name">{{ pattern.id }} <a class="pl-link" rel="bookmark" href="#{{ pattern.id }}" title="Shortcut to {{ pattern.id }}">#</a></summary>
-        <pre><code class="pl-pattern-markup">{{ pattern.code }}</code></pre>
-        <pre class="pl-pattern-usage"><strong>Usage : </strong> {{ pattern.usage }}</pre>
+        <summary>{{ pattern.id }} <a class="pl-link" rel="bookmark" href="#{{ pattern.id }}" title="Shortcut to {{ pattern.id }}">#</a></summary>
+        <div>
+          {% if pattern.usage %}<p class="pl-pattern-usage">
+            <strong>Usage&nbsp;:</strong> {{ pattern.usage }}
+          </p>{% endif %}
+          <pre class="pl-pattern-markup"><code>{{ pattern.markup_escaped }}</code></pre>
+        </div>
       </details>
       <div class="pl-pattern-preview">
-{{ pattern.content }}
+{{ pattern.markup }}
       </div>
     </div>
 {% endfor %}
   </section>
+{% endfor%}
+
 {% endif %}</body>
 </html>
