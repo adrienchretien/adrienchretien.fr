@@ -7,6 +7,7 @@
 
   <title>{{ site.name }} {{ page.title }}</title>
 
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400italic,700|Montserrat:700" type="text/css">
   <link rel="stylesheet" href="css/all.css" />{% if page.title == "pattern library" %}
   <link rel="stylesheet" href="css/pattern-library.css" />{% endif %}
 </head>
@@ -33,7 +34,7 @@
           <pre class="pl-pattern-markup"><code>{{ pattern.markup_escaped }}</code></pre>
         </div>
       </details>
-      <div class="pl-pattern-preview">
+      <div class="pl-pattern-preview"{% if pattern.styles %} style="{{ pattern.styles }}"{% endif %}>
 {{ pattern.markup }}
       </div>
     </div>

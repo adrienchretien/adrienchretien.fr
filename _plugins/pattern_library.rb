@@ -69,7 +69,7 @@ module Jekyll
     def generate(site)
       patterns = read_content(site, '', '_patterns', Pattern).sort
 
-      site.pages << LibraryPage.new(site, 'patchwork', patterns)
+      # site.pages << LibraryPage.new(site, 'patchwork', patterns)
       site.pages << LibraryPage.new(site, 'pattern library', patterns)
     end
 
