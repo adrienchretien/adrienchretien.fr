@@ -8,18 +8,15 @@
   <title>{{ site.name }} {{ page.title }}</title>
 
   <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400italic,700|Montserrat:700" type="text/css">
-  <link rel="stylesheet" href="css/all.css" />{% if page.title == "pattern library" %}
-  <link rel="stylesheet" href="css/pattern-library.css" />{% endif %}
+  <link rel="stylesheet" href="css/all.css" />
+  <link rel="stylesheet" href="css/pattern-library.css" />
 </head>
-{% if page.title == 'patchwork' %}<body>
-{% for pattern in page.patterns %}{{ pattern.markup }}{% endfor %}
-{% else %}<body class="pl-main">
+<body class="pl-main">
   <h1 class="pl-h1">{{ site.name }} {{ page.title }}</h1>
 
   <div class="pl-nav">
     <a class="pl-link" href="/">{{ site.name }}</a>
   </div>
-
 {% for section in page.sections %}
   <section class="pl-section">
     <h2 class="pl-h2">{{ section | first }}</h2>
@@ -41,6 +38,5 @@
 {% endfor %}
   </section>
 {% endfor%}
-
-{% endif %}</body>
+</body>
 </html>

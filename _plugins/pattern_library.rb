@@ -28,7 +28,6 @@ module Jekyll
         'sections' => pattern_attr_hash('section'),
         'title' => name
       }
-
     end
 
     # Construct a Hash of Patterns indexed by the specified Pattern attribute.
@@ -61,6 +60,7 @@ module Jekyll
   # The PatternLibraryGenerator class generates content related to
   # patterns in the _patterns directory.
   class PatternLibraryGenerator < Generator
+    safe false
     # Generates pattern library pages.
     #
     # site - The current Site instance.
