@@ -1,9 +1,0 @@
-<nav>
-  <h2 class="visually-hidden">Navigation</h2>
-  <ul role="navigation">
-    <li{% if page.nav-index == 1 %} class="active"{% endif %}><a href="/">Accueil</a></li>
-    <li{% if page.nav-index == 2 %} class="active"{% endif %}><a href="/projets">Projets</a></li>
-    <li{% if page.nav-index == 3 %} class="active"{% endif %}><a href="/a-propos">À&nbsp;propos</a></li>
-    {% if site.posts.size > 0 %}<li{% if page.nav-index == 4 %} class="active"{% endif %}><a href="/blog">Blog</a></li>{% endif %}
-  </ul>
-</nav>
