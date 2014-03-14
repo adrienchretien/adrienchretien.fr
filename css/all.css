@@ -15,6 +15,7 @@ figure, ol, p, ul {
 }
 
 a {
+  border-bottom: .05em solid;
   color: #51829F;
   text-decoration: none;
 }
@@ -40,16 +41,11 @@ cite {
   color: #717171;
 }
 
-figure img {
-  margin-left: -1em;
-}
-@media screen and (min-width: 32em){
-  figure {
-    float: left;
-  }
-  figure img {
-    margin-left: -1.5em;
-  }
+figure,
+p.center,
+[role="banner"],
+[role="contentinfo"] {
+  text-align: center;
 }
 
 h1 {
@@ -105,7 +101,6 @@ ul.unstyled {
 /*#header*/[role="banner"] {
   margin-bottom: 1.5em;
   padding-top: 1.5em;
-  text-align: center;
 }
 
 @media screen and (min-width: 32em) {
@@ -118,7 +113,6 @@ ul.unstyled {
   background-color: #37586C;
   color: #f6f6f6;
   padding: 1.5em 0;
-  text-align: center;
 }
 [role="contentinfo"] > p {
   margin: 0;
@@ -179,6 +173,7 @@ ul.unstyled {
   border-bottom: .1em solid #f6f6f6;
 }
 .navigation a {
+  border-bottom: none;
   display: block;
   color: #f6f6f6;
   padding: .4em 1em .5em;
@@ -216,7 +211,7 @@ ul.unstyled {
   .navigation .active a {
     border-color: #51829F;
   }
-  .navigation .hidden-above-32em {
+  .navigation .hidden-widescreen {
     display: none;
   }
 }

@@ -1,42 +1,46 @@
 <!doctype HTML>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <meta name="viewport" content="width=device-width">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width">
 
-  <title>{{ site.name }} {{ page.title }}</title>
+<title>{{ site.name }} {{ page.title }}</title>
 
-  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400italic,700|Montserrat:700" type="text/css">
-  <link rel="stylesheet" href="css/all.css" />
-  <link rel="stylesheet" href="css/pattern-library.css" />
+<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400italic,700|Montserrat:700" type="text/css">
+<link rel="stylesheet" href="css/all.css" />
+<link rel="stylesheet" href="css/pattern-library.css" />
 </head>
 <body class="pl-main">
-  <h1 class="pl-h1">{{ site.name }} {{ page.title }}</h1>
+<h1 class="pl-h1">{{ site.name }} {{ page.title }}</h1>
 
-  <div class="pl-nav">
-    <a class="pl-link" href="/">{{ site.name }}</a>
-  </div>
+<div class="pl-nav">
+<a class="pl-link" href="/">{{ site.name }}</a>
+</div>
 {% for section in page.sections %}
-  <section class="pl-section">
-    <h2 class="pl-h2">{{ section | first }}</h2>
+<!-- section: {{ section | first }} -->
+<section class="pl-section">
+<h2 class="pl-h2">{{ section | first }}</h2>
 {% assign patterns = section | last | sort %}{% for pattern in patterns %}
-    <div class="pl-pattern" id="{{ pattern.id }}">
-      <details class="pl-pattern-details">
-        <summary>{{ pattern.id }} <a class="pl-link" rel="bookmark" href="#{{ pattern.id }}" title="Shortcut to {{ pattern.id }}">#</a></summary>
-        <div>
-          {% if pattern.usage %}<p class="pl-pattern-usage">
-            <strong>Usage&nbsp;:</strong> {{ pattern.usage }}
-          </p>{% endif %}
-          <pre class="pl-pattern-markup"><code>{{ pattern.markup_escaped }}</code></pre>
-        </div>
-      </details>
-      <div class="pl-pattern-preview"{% if pattern.styles %} style="{{ pattern.styles }}"{% endif %}>
+<!-- pattern: {{ pattern.id }} -->
+<div class="pl-pattern" id="{{ pattern.id }}">
+<details class="pl-pattern-details">
+<summary>{{ pattern.id }} <a class="pl-link" rel="bookmark" href="#{{ pattern.id }}" title="Shortcut to {{ pattern.id }}">#</a></summary>
+
+<div>{% if pattern.usage %}
+<p class="pl-pattern-usage">
+  <strong>Usage&nbsp;:</strong> {{ pattern.usage }}
+</p>{% endif %}
+<pre class="pl-pattern-markup"><code>{{ pattern.markup_escaped }}</code></pre>
+</div>
+</details>
+
+<div class="pl-pattern-preview"{% if pattern.styles %} style="{{ pattern.styles }}"{% endif %}>
 {{ pattern.markup }}
-      </div>
-    </div>
+</div>
+</div>
 {% endfor %}
-  </section>
+</section>
 {% endfor%}
 </body>
 </html>

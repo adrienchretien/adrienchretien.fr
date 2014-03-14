@@ -166,7 +166,7 @@ module Jekyll
   # The PatternLibraryGenerator class generates content related to
   # patterns in the _patterns directory.
   class PatternLibraryGenerator < Generator
-    safe false
+    safe true
     # Generates pattern library pages.
     #
     # site - The current Site instance.
