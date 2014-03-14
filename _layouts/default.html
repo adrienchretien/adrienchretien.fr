@@ -1,22 +1,6 @@
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-  <meta charset="utf-8">
-  <title>{{ page.title }}</title>
+---
+layout: base
+---
+<h1>{{ page.title }}</h1>
 
-  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <meta name="author" content="{{ site.author }}">
-  <meta name="viewport" content="width=device-width">
-
-  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400italic,700|Montserrat:700" type="text/css">
-  <link rel="stylesheet" href="/css/all.css">
-</head>
-<body class="wrapper">
-  {% include header.html %}
-  <div role="main">
-    {{ content }}
-  </div>
-  {% include main-nav.html %}
-  {% include footer.html %}
-</body>
-</html>
+{{ content }}
