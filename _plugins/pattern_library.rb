@@ -126,13 +126,12 @@ module Jekyll
       @name = name
       @patterns = patterns
 
-      self.basename = name.gsub(' ', '-')
+      self.basename = name
       self.ext = '.html'
       self.data = {
         'layout' => 'pattern_library',
         'patterns' => patterns,
         'sections' => pattern_attr_hash('section'),
-        'title' => name
       }
     end
 
@@ -175,7 +174,7 @@ module Jekyll
     def generate(site)
       patterns = read_content(site, '', '_patterns', Pattern).sort
 
-      site.pages << LibraryPage.new(site, 'pattern library', patterns)
+      site.pages << LibraryPage.new(site, 'pattern-library', patterns)
     end
 
     # Read all files in <site.source>/<dir>/<name> and create a new object

@@ -1,5 +1,14 @@
 # Site globals
 author: Adrien Chrétien
-name: Neol.github.io
+encoding: 'UTF-8'
+exclude: ['README.md','LICENSE']
 markdown: redcarpet
+name: Neol.github.io
 pygments: true
+timezone: 'Europe/Paris'
+url: neol.github.io
+
+# Plugins
+sitemap:
+  exclude:
+    - "/pattern-library"
