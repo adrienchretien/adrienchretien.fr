@@ -7,8 +7,3 @@ name: Neol.github.io
 pygments: true
 timezone: 'Europe/Paris'
 url: neol.github.io
-
-# Plugins
-sitemap:
-  exclude:
-    - "/pattern-library"
