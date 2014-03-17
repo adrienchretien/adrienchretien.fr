@@ -6,9 +6,13 @@
 
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
   <meta name="author" content="{{ site.author }}">
+  <meta name="description" content="{{ page.meta }}">
   <meta name="viewport" content="width=device-width">
 
-  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400italic,700|Montserrat:700" type="text/css">
+  <link rel="alternate" href="/feed.atom" title="Atom" type="application/atom+xml">
+  <link rel="sitemap" href="/sitemap.xml" title="Sitemap" type="application/xml">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400italic,700,700italic|Montserrat:700" type="text/css">
   <link rel="stylesheet" href="/css/all.css">
 </head>
 
@@ -18,8 +22,6 @@
 <div role="main">
 {{ content }}
 </div>
-
-{% include nav.html %}
 
 {% include footer.html %}
 </body>

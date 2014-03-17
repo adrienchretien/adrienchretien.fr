@@ -1,11 +1,11 @@
-<nav role="navigation" id="navigation">
-  <h2 class="visually-hidden">Navigation</h2>
+<nav class="no-print">
+  <h2 class="navigation-title">Navigation</h2>
 
   <ul class="navigation unstyled">
-    <li{% if page.nav-index == 1 %} class="active"{% endif %}><a href="/">Accueil</a></li>
-    <li{% if page.nav-index == 2 %} class="active"{% endif %}><a href="/projets/">Projets</a></li>
-    <li{% if page.nav-index == 3 %} class="active"{% endif %}><a href="/a-propos/">À&nbsp;propos</a></li>
-    {% if site.posts.size > 0 %}<li{% if page.nav-index == 4 %} class="active"{% endif %}><a href="/blog/">Blog</a></li>{% endif %}
-    <li><a href="#top" class="hidden-widescreen">Haut de page</a></li>
+    <li><a href="/">Accueil</a></li>
+    <li><a href="/projets/">Projets</a></li>
+    <li><a href="/a-propos/">À&nbsp;propos</a></li>
+    {% if site.posts.size > 0 %}<li><a href="/blog/">Blog</a></li>{% endif %}
+    <li><a href="mailto:contact@achretien.fr">Contact</a></li>
   </ul>
 </nav>
