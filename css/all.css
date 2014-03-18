@@ -86,8 +86,9 @@ h3 {
   line-height: 1.5;
 }
 
-h4 {
-  margin: 0 0 1.5em;
+h4,
+.h4 {
+  margin: 0;
   font-size: 1em;
   text-transform: none;
 }
@@ -137,10 +138,6 @@ small {
   color: #37586C;
 }
 
-.navigation-title {
-  font-size: 1em;
-  margin: 0;
-}
 /*ul*/.navigation li {
   display: inline-block;
 }
