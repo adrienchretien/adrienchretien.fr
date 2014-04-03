@@ -15,6 +15,10 @@ nav {
 }
 
 /* Base */
+body {
+  margin: 0;
+}
+
 html {
   font: 100%/1.5 'Source Sans Pro', sans-serif;
 }
@@ -44,58 +48,49 @@ img {
 }
 
 /* - Typography & text-level semantics */
-body {
-  font-size: 1em;
+a {
+  text-decoration: none;
 }
-@media screen and (min-width: 32em) {
-  body {
-    font-size: 1.5em
-  }
+a:active,
+a:focus,
+a:hover {
+  border-bottom: 1px solid;
 }
 
-h1,
-h2,
-h3,
-h4 {
-  font-family: 'Montserrat', sans-serif;
-  text-transform: uppercase;
+body {
+  font-size: 1em
+}
+@media screen and (min-width: 40em) {
+  body {
+    font-size: 1.25em
+  }
 }
 
 h1 {
   margin: 0 0 1em;
   font-size: 1.5em;
-  font-weight: 400;
   line-height: 1.25;
 }
 @media screen and (min-width: 32em) {
   h1 {
-    margin: 0 0 .75em;
+    margin: 0;
+    padding: .5em 0 .25em;
     font-size: 2em;
   }
 }
 
 h2 {
-  margin: 0 0 1.2em;
+  margin: 0;
+  padding: .6em 0 .4em;
   font-size: 1.25em;
   line-height: 1.33;
 }
 
 h3 {
-  margin: 0 0 1.5em;
+  margin: 0;
+  padding: .5em 0;
   font-size: 1em;
   line-height: 1.5;
-}
-
-h4,
-.h4 {
-  margin: 0;
-  font-size: 1em;
-  text-transform: none;
-}
-
-a {
-  border-bottom: .05em solid;
-  text-decoration: none;
 }
 
 small {
@@ -106,78 +101,105 @@ small {
   text-align: center;
 }
 
-/* Layout */
-#footer,
-#header {
-  margin: 1.5em 0;
+/* Modules */
+.footer {
+  margin-top: 3em;
+  text-align: center;
 }
-@media screen and (min-width: 32em) {
-  #footer {
-    margin: 3em 0 1.5em;
+
+.header {
+  padding: 1.5em 0;
+  text-align: center;
+}
+  .header p,
+  .header ul {
+    margin-bottom: 0;
   }
-  #header {
-    margin: 1.5em 0 3em;
+@media screen and (min-width: 48em) {
+  .header {
+    margin-bottom: 3em;
+    border-bottom: .05em solid #e8e8e8;
+    text-align: left;
+    overflow: hidden;
   }
+}
+
+.main {
+  width: 88%;
+  clear: both;
+  max-width: 36em;
+  margin: 0 auto;
+}
+
+.navigation {
+  margin-top: 1.5em;
+}
+.navigation a:active,
+.navigation a:focus,
+.navigation a:hover {
+  border-bottom: none;
+}
+@media screen and (min-width: 23em) {
+  .navigation li {
+    display: inline;
+  }
+  .navigation a {
+    margin: 0 .75em;
+  }
+}
+@media screen and (min-width: 48em) {
+  .navigation {
+    float: right;
+  }
+}
+
+/*.vcard*/
+  .fn {
+    margin: 0;
+    padding: 0;
+    font-size: 1em;
+    font-weight: normal;
+    line-height: 1.5;
+  }
+  .fn a:active,
+  .fn a:focus,
+  .fn a:hover {
+    border-bottom: none;
+  }
+  .photo {
+    height: 60px;
+    width: 60px;
+  }
+@media screen and (min-width: 48em) {
+  .vcard {
+    float: left;
+    margin-left: .75em;
+    width: 14em;
+  }
+    .photo {
+      float: left;
+      margin-right: .75em;
+    }
 }
 
 .wrapper {
-  max-width: 32em;
-  margin: 0 auto;
-  padding: 0 1em;
-}
-
-/* Modules */
-/*a*/.logo {
-  border-bottom: none;
-  color: #a0a0a0;
-}
-.logo:active,
-.logo:focus,
-.logo:hover {
-  color: #37586C;
-}
-
-/*ul*/.navigation li {
-  display: inline-block;
-}
-.navigation a {
-  padding: 0 .4em;
-  border-bottom: none;
+  margin: 0 4%;
 }
 
 /* Media */
-@media print {
-  @page {
-    size: A4;
-    margin: 15mm 15mm;
-  }
-
-  a { border-bottom: none; }
-
-  a, body { color: #000; }
-
-  body { font-size: 10pt; }
-
-  .no-print { display: none; }
-
-  .wrapper {
-    max-width: none;
-  }
-}
-
 /* Theme */
 html {
-  background-color: #fafafa;
-  color: #434D53;
+  background-color: #fff;
+  color: #1B3A50;
 }
 
 a {
-  color: #51829F;
+  color: #147db9;
 }
 a:active,
 a:focus,
 a:hover {
-  color: #37586C;
+  color: #1a6088;
 }
 
 caption,

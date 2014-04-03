@@ -1,3 +1,16 @@
-<header id="header" class="text-center">
-  <a href="/" class="logo">Adrien Chrétien</a>
-</header>
+<div class="header">
+  <header class="vcard">
+    <img class="photo" src="images/face.jpg" alt="Photo Adrien Chrétien" height="60" width="60">
+    <h1 class="fn"><a href="http://achretien.fr" rel="me">Adrien Chrétien</a></h1>
+    <p class="role">Développeur front-end</p>
+  </header>
+
+  <nav>
+    <ul class="navigation unstyled">
+      <li><a href="/experiences.html">Expériences</a></li>
+      <li><a href="/projets.html">Projets</a></li>
+      <li><a href="/a-propos.html">À&nbsp;propos</a></li>
+      {% if site.posts.size > 0 %}<li><a href="/blog/">Blog</a></li>{% endif %}
+    </ul>
+  </nav>
+</div>
