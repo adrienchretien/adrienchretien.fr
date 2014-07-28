@@ -1,11 +1,11 @@
 # Site settings
-title: Adrien Chrétien
+title: Adrien Chrétien - Développeur web
+author: Adrien Chrétien
 email: contact@achretien.fr
+lang: fr
 description: "Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description."
 baseurl: ""
 url: "http://achretien.fr"
-twitter_username: jekyllrb
-github_username:  jekyll
 
 # Build settings
 markdown: kramdown
