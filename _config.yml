@@ -4,6 +4,6 @@ encoding: 'UTF-8'
 exclude: ['README.md','LICENSE']
 markdown: redcarpet
 name: Neol.github.io
-pygments: true
+highlighter: true
 timezone: 'Europe/Paris'
 url: neol.github.io
