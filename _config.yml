@@ -1,9 +1,12 @@
-# Site globals
-author: Adrien Chrétien
-encoding: 'UTF-8'
-exclude: ['README.md','LICENSE']
-markdown: redcarpet
-name: Neol.github.io
-highlighter: true
-timezone: 'Europe/Paris'
-url: neol.github.io
+# Site settings
+title: Adrien Chrétien
+email: contact@achretien.fr
+description: "Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description."
+baseurl: ""
+url: "http://achretien.fr"
+twitter_username: jekyllrb
+github_username:  jekyll
+
+# Build settings
+markdown: kramdown
+permalink: pretty

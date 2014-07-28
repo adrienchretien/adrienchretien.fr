@@ -1,9 +1,20 @@
 ---
-layout: base
-meta: Développeur web fron-end angevin.
-title: Adrien Chrétien, Développeur web front-end
+layout: default
 ---
 
-<h1>Bonjour, je suis Adrien, un développeur web front-end.</h1>
+<div class="home">
 
-<p>Bienvenue, vous trouverez ici <a href="/experiences.html">les sites</a> et <a href="/projets.html">quelques projets</a> sur lesquels j'ai travaillé. Si <a href="/a-propos.html">mes services</a> vous intéressent, je suis à votre disposition pour en <a href="mailto:contact@achretien.fr">discuter</a>. Bonne visite.</p>
+  <h1>Posts</h1>
+
+  <ul class="posts">
+    {% for post in site.posts %}
+      <li>
+        <span class="post-date">{{ post.date | date: "%b %-d, %Y" }}</span>
+        <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
+      </li>
+    {% endfor %}
+  </ul>
+
+  <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a></p>
+
+</div>
