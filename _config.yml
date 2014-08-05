@@ -1,10 +1,9 @@
 # Site settings
-title: Adrien Chrétien - Développeur web
+title: Adrien Chrétien
 author: Adrien Chrétien
 email: contact@achretien.fr
 lang: fr
-description: "Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description."
-baseurl: ""
+description: "Développeur et intégrateur web"
 url: "http://achretien.fr"
 
 # Build settings
