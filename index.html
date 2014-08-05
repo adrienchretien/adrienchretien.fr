@@ -1,20 +1,29 @@
 ---
 layout: default
 ---
+{% for post in paginator.posts %}
+  {% capture day %}{{ post.date | date: '%m%d%Y' }}{% endcapture %}
+  {% capture daybefore %}{{ post.previous.date | date: '%m%d%Y' }}{% endcapture %}
+  {% capture dayafter %}{{ post.next.date | date: '%m%d%Y' }}{% endcapture %}
+  {% if day != dayafter %}
+<section>
+<h2>{{ post.date | date_to_long_string }}</h2>
+  {% endif %}
 
-<div class="home">
+  {% if post.category == 'link' %}
+{% include article-link.html %}
+  {% else %}
+{% include article.html %}
+  {% endif %}
 
-  <h1>Posts</h1>
+  {% if day != daybefore %}
+</section>
+  {% endif %}
+{% endfor %}
 
-  <ul class="posts">
-    {% for post in site.posts %}
-      <li>
-        <span class="post-date">{{ post.date | date: "%b %-d, %Y" }}</span>
-        <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
-      </li>
-    {% endfor %}
-  </ul>
-
-  <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a></p>
-
-</div>
+{% if paginator.total_pages > 1 %}
+<nav class="pagination">
+  {% if paginator.previous_page %}<a href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}">Prev</a>{% endif %}
+  {% if paginator.next_page %}<a href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}">Next</a>{% endif %}
+</nav>
+{% endif %}

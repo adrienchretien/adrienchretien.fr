@@ -1,25 +1,8 @@
-<header class="site-header">
-
-  <div class="wrap">
-
-    <a class="site-title" href="{{ site.baseurl }}/">{{ site.title }}</a>
-
-    <nav class="site-nav">
-      <a href="#" class="menu-icon">
-        <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-           viewBox="0 0 18 15" enable-background="new 0 0 18 15" xml:space="preserve">
-          <line x1="1.5" y1="1.5" x2="16.5" y2="1.5" stroke="#505050" stroke-width="3" stroke-linecap="round"/>
-          <line x1="1.5" y1="7.5" x2="16.5" y2="7.5" stroke="#505050" stroke-width="3" stroke-linecap="round"/>
-          <line x1="1.5" y1="13.5" x2="16.5" y2="13.5" stroke="#505050" stroke-width="3" stroke-linecap="round"/>
-        </svg>
-      </a>
-      <div class="trigger">
-        {% for page in site.pages %}
-          {% if page.title %}<a class="page-link" href="{{ page.url | prepend: site.baseurl }}">{{ page.title }}</a>{% endif %}
-        {% endfor %}
-      </div>
-    </nav>
-
-  </div>
-
+<header role="banner">
+  {% if page.url == '/'%}
+    <h1><a href="{{ site.baseurl }}/">Adrien Chrétien</a></h1>
+    <p class="subtitle">Notes et liens</p>
+  {% else %}
+    <a href="{{ site.baseurl }}/" class="logo">Adrien Chrétien</a>
+  {% endif %}
 </header>

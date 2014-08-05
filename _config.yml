@@ -8,4 +8,5 @@ url: "http://achretien.fr"
 
 # Build settings
 markdown: kramdown
+paginate: 10
 permalink: pretty
