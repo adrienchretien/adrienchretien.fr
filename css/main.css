@@ -18,6 +18,9 @@ body {
 figure {
   margin: 1em 0;
   padding: 0;
+}
+
+figcaption {
   text-align: center;
 }
 
