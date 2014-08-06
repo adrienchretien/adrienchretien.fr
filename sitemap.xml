@@ -1,0 +1,20 @@
+---
+layout: none
+---
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  {% for page in site.pages %}{% unless page.url == '/feed.xml' or page.url == '/sitemap.xml' %}
+  <url>
+    <loc>{{ page.url | prepend: site.baseurl | prepend: site.url }}</loc>
+    <lastmod>{% if page.date %}{{ page.date | date_to_xmlschema }}{% else %}{{ site.time | date_to_xmlschema }}{% endif %}</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>{% if page.url == '/' %}1.0{% else %}0.7{% endif %}</priority>
+  </url>{% endunless %}{% endfor %}
+  {% for post in site.posts %}
+  <url>
+    <loc>{{ post.url | prepend: site.baseurl | prepend: site.url }}</loc>
+    <lastmod>{% if post.update %}{{ post.update | date_to_xmlschema }}{% elsif post.date %}{{ post.date | date_to_xmlschema }}{% else %}{{ site.time | date_to_xmlschema }}{% endif %}</lastmod>
+    <priority>0.8</priority>
+  </url>{% endfor %}
+
+</urlset>

@@ -6,6 +6,14 @@ lang: fr
 description: "Développeur et intégrateur web"
 url: "http://achretien.fr"
 
+defaults:
+  - 
+    scope:
+      path: ""
+      type: "post"
+    values:
+      layout: "post"
+
 # Build settings
 markdown: kramdown
 paginate: 10
