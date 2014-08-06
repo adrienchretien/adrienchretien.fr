@@ -22,14 +22,14 @@ Il est possible de créer ce type de contexte d'affichage en attribuant à un é
 - `display: inline-block`, `table`, `table-cell` ou `table-caption`;
 - `overflow: hidden`, `scroll` ou `auto`.
 
-La méthode la plus simple à utiliser est `overflow: hidden`, mais son contenu peut être amené à disparaître, par exemple : si un enfant déclaré avec un une ombre portée n'a pas de marges externes déclarés ou que les marges internes de son parent ne le sont pas, il sera difficile de voir cette ombre. Du coup, et si c'est possible, il est peut-être préférable d'utiliser les déclarations `float: left` et `width: 100%` à la place.
+La méthode la plus simple à utiliser est `overflow: hidden`, mais son contenu peut être amené à disparaître, par exemple : si un enfant déclaré avec une ombre portée n'a pas de marges externes déclarés ou que les marges internes de son parent ne le sont pas, il sera difficile de voir cette ombre. Du coup, et si c'est possible, il est peut-être préférable d'utiliser les déclarations `float: left` et `width: 100%` à la place.
 
 <figure>
   <div style="overflow: hidden;">
-    <p style="box-shadow: 0px 0px 1em 0 #333; padding: .25em; background-color: dodgerblue; color: white;">&lt;p&gt; déclarée avec un `box-shadow` dans un BFC généré avec `overflow: hidden`.</p>
+    <p style="box-shadow: 0px 0px 1em 0 #333; padding: .25em; background-color: dodgerblue; color: white;">&lt;p&gt; déclaré avec un <code>box-shadow</code> dans un BFC généré avec <code>overflow: hidden</code>.</p>
   </div>
-  <div style="float: left;">
-    <p style="box-shadow: 0px 0px 1em 0 #333; padding: .25em; background-color: dodgerblue; color: white;">&lt;p&gt; déclarée avec un `box-shadow` dans un BFC généré avec `float: left` et `width: 100%`.</p>
+  <div style="float: left; width: 100%;">
+    <p style="box-shadow: 0px 0px 1em 0 #333; padding: .25em; background-color: dodgerblue; color: white;">&lt;p&gt; déclaré avec un <code>box-shadow</code> dans un BFC généré avec <code>float: left</code> et <code>width: 100%</code>.</p>
   </div>
   <figcaption>Exemple de génération d'un <i>block formatting context</i>.</figcaption>
 </figure>
@@ -90,7 +90,7 @@ Ainsi, lorsque l'on veut mettre en place une grille horizontale, il est utile de
     <div style="float: left; width: 66.67%;"><p style="background: gainsboro;">2/3</p></div>
     <div style="box-sizing: border-box; float: left; width: 33.33%; padding-left: 1em"><p style="background: gainsboro;">1/3</p></div>
   </div>
-  <figcaption>Exemples de grille avec divisions flottantes : la première a des gouttières fluides à 2% et la seconde a ses gouttières fixes à `1em`.</figcaption>
+  <figcaption>Exemples de grille avec divisions flottantes : la première a des gouttières fluides à 2% et la seconde a ses gouttières fixes à <code>1em</code>.</figcaption>
 </figure>
 
 ## Pour plus de détails
