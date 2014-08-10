@@ -6,6 +6,8 @@ lang: fr
 description: "Développeur et intégrateur web"
 url: "http://achretien.fr"
 
+exclude: ["LICENSE", "README.md"]
+
 defaults:
   - 
     scope:
