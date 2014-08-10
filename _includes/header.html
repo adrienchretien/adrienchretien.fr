@@ -1,8 +1,8 @@
 <header role="banner">
   {% if page.url == '/'%}
-    <h1><a href="{{ site.baseurl }}/">Adrien Chrétien</a></h1>
-    <p class="subtitle">Notes et liens</p>
+    <h1><a href="{{ site.baseurl }}/">{{ site.title }}</a></h1>
+    <p class="subtitle">{{ site.description }}</p>
   {% else %}
-    <a href="{{ site.baseurl }}/" class="logo">Adrien Chrétien</a>
+    <a href="{{ site.baseurl }}/" class="logo">{{ site.title }}</a>
   {% endif %}
 </header>
