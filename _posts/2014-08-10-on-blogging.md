@@ -1,6 +1,7 @@
 ---
 title: "On blogging"
 meta: "Article motivant de Marc Jenkins sur les difficultés qu'il a rencontré pour tenir son blog et ce qui l'encourage à continuer."
+external-link: http://plausiblethought.net/on-blogging/
 date: 2014-08-10 19:04 +02:00
 category: links
 tags: writing

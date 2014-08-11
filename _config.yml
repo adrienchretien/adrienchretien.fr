@@ -6,7 +6,7 @@ lang: fr
 description: "Notes et liens d'un développeur et intégrateur web"
 url: "http://achretien.fr"
 
-exclude: ["LICENSE", "README.md"]
+exclude: ["LICENSE", "README.md", CNAME]
 
 defaults:
   - 

@@ -7,10 +7,9 @@ layout: default
   {% capture dayafter %}{{ post.next.date | date: '%m%d%Y' }}{% endcapture %}
   {% if day != dayafter %}
 <section>
-
   {% endif %}
 
-  {% if post.category == 'link' %}
+  {% if post.category == 'links' %}
 {% include article-link.html %}
   {% else %}
 {% include article.html %}
