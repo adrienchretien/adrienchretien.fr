@@ -2,21 +2,10 @@
 layout: default
 ---
 {% for post in paginator.posts %}
-  {% capture day %}{{ post.date | date: '%m%d%Y' }}{% endcapture %}
-  {% capture daybefore %}{{ post.previous.date | date: '%m%d%Y' }}{% endcapture %}
-  {% capture dayafter %}{{ post.next.date | date: '%m%d%Y' }}{% endcapture %}
-  {% if day != dayafter %}
-<section>
-  {% endif %}
-
-  {% if post.category == 'links' %}
+  {% if post.category == 'liens' %}
 {% include article-link.html %}
   {% else %}
 {% include article.html %}
-  {% endif %}
-
-  {% if day != daybefore %}
-</section>
   {% endif %}
 {% endfor %}
 

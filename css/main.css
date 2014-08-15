@@ -4,6 +4,14 @@ a {
   text-decoration: none;
 }
 
+blockquote {
+  font-style: italic;
+}
+
+blockquote em {
+  font-weight: bold;
+}
+
 body {
   margin: 0;
   padding: 0 1em;
@@ -34,7 +42,7 @@ h4 {
 
 h1 {
   margin: 1em 0 .33em;
-  font-size: 3em;
+  font-size: 3.22em;
   line-height: 1;
 }
 
@@ -58,7 +66,7 @@ h4,
 }
 
 header {
-  margin: 3em 0 2em;
+  margin: 0 0 2em;
 }
 
 html {
@@ -68,6 +76,11 @@ html {
 img {
   max-width: 100%;
   vertical-align: middle;
+}
+
+small,
+.small {
+  font-size: .9em;
 }
 
 /* Structure */
@@ -82,17 +95,19 @@ img {
   text-align: center;
 }
 
-[role="contentinfo"] {
-  padding: 1em 0;
-}
-
 [role="main"] {
   max-width: 720px;
-  margin: 3em auto;
+  margin: 3em auto 2em;
 }
 
 /* Classes */
 /* ----------------------------------------------------------*/
+
+/* Articles */
+.h-entry {
+  border-bottom: 1px solid;
+  padding-bottom: 1em;
+}
 
 .article-header {
   text-align: center;
@@ -103,11 +118,30 @@ img {
   margin-top: 0;
 }
 
-/* List articles */
-.list-articles {
+/* List posts */
+.list-posts {
   margin: 1em 0;
   padding: 0;
   list-style: none;
+}
+  .list-posts__post {
+    border-bottom: 1px solid;
+  }
+
+/* Meta */
+.meta {
+  margin: 0;
+}
+  .meta-separator::before {
+    content: "\e12c";
+    margin-left: 1em;
+    margin-right: 1em;
+  }
+
+/* Read more */
+.read-more::after {
+  content: "»";
+  margin-left: .5em;
 }
 
 /* WebFonts */
@@ -155,6 +189,11 @@ html {
 .caption,
 .list-articles__date {
   color: #808080;
+}
+
+.h-entry,
+.list-posts__post {
+  border-color: #eaeaea;
 }
 
 /* Syntax highlighting styles */

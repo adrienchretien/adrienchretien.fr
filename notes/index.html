@@ -1,0 +1,8 @@
+---
+layout: default
+---
+<ul class="list-posts">
+{% for post in site.categories.notes %}
+  {% include list-posts__post.html %}
+{% endfor %}
+</ul>
