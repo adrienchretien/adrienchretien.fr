@@ -133,7 +133,7 @@ small,
   margin: 0;
 }
   .meta-separator::before {
-    content: "\e12c";
+    content: "\2022";
     margin-left: 1em;
     margin-right: 1em;
   }
