@@ -1,8 +1,8 @@
 <header role="banner">
   {% if page.url == '/'%}
-    <h1><a href="{{ site.baseurl }}/">{{ site.title }}</a></h1>
+    <h1><a href="{{ site.baseurl }}/" rel="me">{{ site.title }}</a></h1>
     <p class="subtitle">{{ site.description }}</p>
   {% else %}
-    <a href="{{ site.baseurl }}/" class="logo">{{ site.title }}</a>
+    <a href="{{ site.baseurl }}/" class="logo" rel="me">{{ site.title }}</a>
   {% endif %}
 </header>
