@@ -115,19 +115,19 @@ small,
 /* Classes */
 /* ----------------------------------------------------------*/
 
-/* Articles */
-.h-entry {
+/* Caption */
+.caption {
+  margin-top: 0;
+}
+
+/* Content */
+.content {
   border-bottom: 1px solid;
   padding-bottom: 1em;
 }
 
-.article-header {
+.content__header {
   text-align: center;
-}
-
-/* Caption */
-.caption {
-  margin-top: 0;
 }
 
 /* List posts */
@@ -138,6 +138,9 @@ small,
 }
   .list-posts__post {
     border-bottom: 1px solid;
+  }
+  .list-posts__date::after {
+    content: " − ";
   }
 
 /* Meta */
