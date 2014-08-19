@@ -16,38 +16,19 @@ Ce type de contexte spécifie que&nbsp;:
   <li>
     le contexte contient les éléments flottants
     <figure>
-      <div style="overflow: auto;">
-        <div style="float: left; width: 48%;">
-          <div style="padding: 1em; background-color: dodgerblue">
-            <div style="float: left; width: 85%; padding: .25em; color: #555; background-color: gainsboro;">Élément flottant.</div>
-          </div>
-        </div>
-        <div style="float: right; width: 48%;">
-          <div style="overflow: hidden; padding: 1em; background-color: dodgerblue">
-            <div style="float: left; width: 80%; padding: .25em; color: #555; background-color: gainsboro;">Élément flottant contenu dans un BFC.</div>
-          </div>
-        </div>
-      </div>
+      <img src="/images/2014-08-06-contient-flottants.png" title="À droite, un bloc générant un BFC dont la hauteur tient compte de la hauteur du bloc flottant qu'il contient. À gauche, un bloc qui ne tient pas compte de cette hauteur." />
     </figure>
   </li>
   <li>
     le contenu d'un BFC ne s'écoule pas autour d'un flottant adjacent
     <figure>
-      <div style="overflow: hidden; padding: 1em; background-color: dodgerblue">
-        <div style="float: left; width: 20%; padding: .25em; color: dimgray; background-color: gainsboro;">Élément flottant.</div>
-        <div style="float: right; width: 20%; padding: .25em; color: dimgray; background-color: gainsboro;">Élément flottant.</div>
-        <div style="overflow: hidden; padding: .25em; background-color: dimgray; color: white;">Élément dont le contenu ne s'écoule pas autour des frères flottants car il est contenu dans un BFC.</div>
-      </div>
+      <img src="/images/2014-08-06-ecoulement-autour-flottants.png" title="Le BFC empêche l'écoulement du contenu (situé au centre) autour des flottants (situés sur les côtés)." />
     </figure>
   </li>
   <li>
     les marges verticales des enfants ne débordent pas du contexte
     <figure>
-      <div style="color: white;">
-        <div style="background-color: dodgerblue;"><p style="margin: 1em 0; padding: 0 .25em;">Élément &lt;p&gt; avec marges verticales fusionnées.</p></div>
-        <div style="background-color: dodgerblue;"><p style="margin: 1em 0; padding: 0 .25em;">Élément &lt;p&gt; avec marges verticales fusionnées.</p></div>
-        <div style="overflow: hidden; background-color: dodgerblue;"><p style="margin: 1em 0; padding: 0 .25em;">Élément &lt;p&gt;, dans un BFC, avec marges verticales non-fusionnées.</p></div>
-      </div>
+      <img src="/images/2014-08-06-fusion-marges.png" title="Le BFC contient les marges du paragraphe qu'il contient." />
     </figure>
   </li>
 </ul>
@@ -62,9 +43,7 @@ Il est possible de créer un BFC en attribuant à un élément, l'une des décla
 La méthode la plus simple à utiliser est `overflow: hidden`, mais son contenu peut être amené à disparaître, par exemple&nbsp;: si un enfant est déclaré avec une ombre portée, il sera peut-être difficile de la voir.
 
 <figure>
-  <div style="overflow: hidden;">
-    <p style="box-shadow: 0px 0px 1em 0 #333; padding: .25em; background-color: dodgerblue; color: white;">&lt;p&gt; déclaré avec un <code>box-shadow</code> dans un BFC généré avec <code>overflow: hidden</code>.</p>
-  </div>
+  <img src="/images/2014-08-06-debordements-caches.png" title="La méthode overflow cache l'ombre portée du paragraphe qu'il contient." />
 </figure>
 
 Quelque part, le BFC est une sorte de lien entre l'élément qui le génère, les éléments adjacents et ses enfants dans le flux ou flottants. Il force le navigateur à récupérer des informations sur les dimensions et la flottaison d'un de ces derniers pour les prendre en compte dans ses calculs.
