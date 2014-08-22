@@ -3,7 +3,7 @@ title: Adrien Chrétien
 author: Adrien Chrétien
 email: contact@achretien.fr
 lang: fr
-description: "Notes et liens d'un développeur et intégrateur web"
+description: "Notes et liens d'un intégrateur web"
 url: "http://achretien.fr"
 
 exclude: ["LICENSE", "README.md", CNAME]

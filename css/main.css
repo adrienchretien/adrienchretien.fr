@@ -4,6 +4,10 @@ a {
   text-decoration: none;
 }
 
+article {
+  font-family: Merriweather, 'Times New Roman', Times, serif;
+}
+
 blockquote {
   margin-left: 1.5em;
   margin-right: 1.5em;
@@ -17,7 +21,7 @@ blockquote em {
 body {
   margin: 0;
   padding: 0 1em;
-  font: 1em/1.8 sans-serif;
+  font: 1em/1.8 'Source Sans Pro', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
 @media screen and (min-width: 800px) {
   body {
@@ -37,14 +41,16 @@ figcaption {
 h1,
 h2,
 h3,
-h4 {
-  font-family: 'Helvetica Neue', Arial, Helvetica, sans-serif;
+h4,
+.logo {
+  font-family: 'Source Sans Pro', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-weight: 700;
 }
 
 h1 {
   margin: 1em 0 .33em;
   font-size: 3.22em;
+  font-weight: 900;
   line-height: 1;
 }
 @media screen and (max-width: 400px) {
@@ -158,28 +164,6 @@ small,
 .read-more::after {
   content: "»";
   margin-left: .5em;
-}
-
-/* WebFonts */
-.wf-active body {
-  font-family: 'Source Sans Pro', sans-serif;
-}
-
-.wf-active article {
-  font-family: Merriweather, sans-serif;
-}
-
-.wf-active h1,
-.wf-active h2,
-.wf-active h3,
-.wf-active h4,
-.logo {
-  font-family: 'Source Sans Pro', sans-serif;
-  font-weight: 700;
-}
-
-.wf-active h1 {
-  font-weight: 900;
 }
 
 /* Theme */
