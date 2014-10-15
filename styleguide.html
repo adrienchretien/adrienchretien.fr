@@ -1,0 +1,81 @@
+---
+layout: null
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="viewport" content="width=device-width">
+
+	<title>Styleguide</title>
+
+	<link rel="stylesheet" href="{{ '/css/styleguide.css' | prepend: site.baseurl }}">
+</head>
+<body class="sg-body">
+
+<div class="sg-header">
+	<h1>Styleguide</h1>
+	<ul class="sg-nav">
+		<li><a href="#colors">Colors</a></li>
+		<li><a href="#typography">Typography</a></li>
+	</ul>
+</div>
+
+<div class="sg-main">
+<!-- Swatches -->
+<div class="sg-section">
+	<h2 id="colors">Colors</h2>
+	<ul class="sg-swatches">
+		<li style="background-color: #303030; color: #fff;">
+			<p>Name (#303030/48,48,48)</p>
+		</li>
+		<li style="background-color: #c0c0c0">
+			<p>Name (#c0c0c0/192,192,192)</p>
+		</li>
+		<li style="background-color: #c0c0c0">
+			<p>Name (#c0c0c0/192,192,192)</p>
+		</li>
+		<li style="background-color: #c0c0c0">
+			<p>Name (#c0c0c0/192,192,192)</p>
+		</li>
+	</ul>
+</div>
+<!-- Sections -->
+<div class="sg-section">
+	<h2 id="typography">Typography</h2>
+	<p>Default typography styles.</p>
+</div>
+<!-- Grouping content -->
+<div class="sg-section">
+	<h2>Grouping content</h2>
+	
+</div>
+<!-- Text-level semantics -->
+<div class="sg-section">
+	<h2>Text-level semantics</h2>
+	
+</div>
+<!-- Tabular data -->
+<div class="sg-section">
+	<h2>Tabular data</h2>
+	
+</div>
+<!-- Forms -->
+<div class="sg-section">
+	<h2>Forms</h2>
+	
+</div>
+<!-- Patterns -->
+<div class="sg-section">
+	<h2>Patterns</h2>
+	
+	{% for pattern in site.patterns %}{{ pattern.output }}{% endfor %}
+</div>
+</div>
+
+<div class="sg-footer">
+	<p><small>Based on <a href="https://github.com/maban/styleguide" rel="external">Anna Debenham's styleguide</a> and <a href="https://github.com/paulrobertlloyd/barebones" rel="external">Paul Robert Lloyd's barbones</a>. A big <b>thank you</b> to their authors.</small></p>
+</div>
+</body>
+</html>

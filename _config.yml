@@ -6,15 +6,18 @@ lang: fr
 description: "Notes et liens d'un intégrateur web"
 url: "http://achretien.fr"
 
-exclude: ["LICENSE", "README.md", CNAME]
+exclude: [LICENSE, README.md, CNAME, Gemfile, Gemfile.lock]
 
 defaults:
   - 
     scope:
       path: ""
-      type: "post"
+      type: "posts"
     values:
       layout: "post"
+      
+collections:
+- patterns
 
 # Build settings
 markdown: kramdown

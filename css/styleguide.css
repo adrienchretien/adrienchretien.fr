@@ -1,0 +1,55 @@
+/* Shared styles */
+.sg-footer,
+.sg-header,
+.sg-section > h2,
+.sg-swatches {
+	font-family: Arial, sans-serif;
+	color: #303030;
+}
+
+.sg-footer,
+.sg-header,
+.sg-main {
+	padding: 0 1em;
+}
+
+/* Detailed styles */
+
+.sg-body {
+	margin: 0 1.5em 0 20%;
+}
+
+.sg-header h1 {
+	font-size: 3em;
+}
+
+.sg-footer {
+	border-top: 2px solid #e0e0e0;
+}
+
+/*ul*/.sg-nav {
+	padding-left: 0; 
+	list-style: none;
+}
+	.sg-nav li {
+		display: inline;
+		margin: 0 .5em;
+	}
+
+/*ul*/.sg-swatches {
+	padding-left: 0;
+	list-style: none;
+}
+	.sg-swatches li {
+		display: inline-block;
+		width: 23%;
+		padding: .5em .5em 5em;
+		border-radius: .5em;
+		box-shadow: 0 .2em .2em #e0e0e0;
+		text-align: center;
+		vertical-align: bottom;
+	}
+	.sg-swatches p {
+		margin: 0;
+		padding: .25em .5em;
+	}
