@@ -15,12 +15,13 @@ defaults:
       type: "posts"
     values:
       layout: "post"
-      
-collections:
-- patterns
 
 # Build settings
 markdown: kramdown
 paginate: 10
 permalink: pretty
 excerpt_separator: "\r\n\r\n"
+
+# Collections
+collections:
+- patterns

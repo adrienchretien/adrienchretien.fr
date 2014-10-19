@@ -1,7 +1,13 @@
 /* Shared styles */
 .sg-footer,
 .sg-header,
+.sg-header > h1,
+.sg-pattern-name,
+.sg-pattern-usage,
 .sg-section > h2,
+.sg-section > h3,
+.sg-section > h4,
+.sg-section > p,
 .sg-swatches {
 	font-family: Arial, sans-serif;
 	color: #303030;
@@ -16,15 +22,19 @@
 /* Detailed styles */
 
 .sg-body {
-	margin: 0 1.5em 0 20%;
+	margin: 0 1.5em;
+}
+
+.sg-footer {
+	border-top: 2px solid #e0e0e0;
 }
 
 .sg-header h1 {
 	font-size: 3em;
 }
 
-.sg-footer {
-	border-top: 2px solid #e0e0e0;
+.sg-main {
+	max-width: 50em;
 }
 
 /*ul*/.sg-nav {
@@ -36,6 +46,16 @@
 		margin: 0 .5em;
 	}
 
+/*.sg-pattern*/
+	.sg-pattern-usage code {
+		color: #f50;
+	}
+	.sg-pattern-details pre {
+		white-space: pre-wrap;
+		word-break: break-all;
+		word-wrap: break-word;
+	}
+
 /*ul*/.sg-swatches {
 	padding-left: 0;
 	list-style: none;
@@ -43,9 +63,11 @@
 	.sg-swatches li {
 		display: inline-block;
 		width: 23%;
-		padding: .5em .5em 5em;
+		min-height: 4em;
+		margin: 0 1% 1% 0;
+		padding: .5em .5em .5em;
 		border-radius: .5em;
-		box-shadow: 0 .2em .2em #e0e0e0;
+		box-shadow: 0 .2em .2em #b0b0b0;
 		text-align: center;
 		vertical-align: bottom;
 	}

@@ -1,5 +1,5 @@
 ---
-layout: null
+section_names: [sections, grouping-content, embedded, text, code, edits, form, lists, table]
 ---
 <!DOCTYPE html>
 <html lang="en">
@@ -10,7 +10,27 @@ layout: null
 
 	<title>Styleguide</title>
 
+	<link rel="stylesheet" href="{{ '/css/main.css' | prepend: site.baseurl }}">
 	<link rel="stylesheet" href="{{ '/css/styleguide.css' | prepend: site.baseurl }}">
+	<link rel="stylesheet" href="{{ '/css/highlight.css' | prepend: site.baseurl }}">
+	
+  <script type="text/javascript">
+    WebFontConfig = {
+      google: { families: [
+        'Merriweather:r,ri,b,bi:latin',
+        'Merriweather+Sans:r,b,800:latin'
+      ] }
+    };
+    (function() {
+      var wf = document.createElement('script');
+      wf.src = ('https:' == document.location.protocol ? 'https' : 'http') +
+        '://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js';
+      wf.type = 'text/javascript';
+      wf.async = 'true';
+      var s = document.getElementsByTagName('script')[0];
+      s.parentNode.insertBefore(wf, s);
+    })();
+  </script>
 </head>
 <body class="sg-body">
 
@@ -18,7 +38,6 @@ layout: null
 	<h1>Styleguide</h1>
 	<ul class="sg-nav">
 		<li><a href="#colors">Colors</a></li>
-		<li><a href="#typography">Typography</a></li>
 	</ul>
 </div>
 
@@ -28,54 +47,36 @@ layout: null
 	<h2 id="colors">Colors</h2>
 	<ul class="sg-swatches">
 		<li style="background-color: #303030; color: #fff;">
-			<p>Name (#303030/48,48,48)</p>
+			<p>Main text</p>
 		</li>
 		<li style="background-color: #c0c0c0">
-			<p>Name (#c0c0c0/192,192,192)</p>
-		</li>
-		<li style="background-color: #c0c0c0">
-			<p>Name (#c0c0c0/192,192,192)</p>
-		</li>
-		<li style="background-color: #c0c0c0">
-			<p>Name (#c0c0c0/192,192,192)</p>
+			<p>Aside</p>
 		</li>
 	</ul>
 </div>
-<!-- Sections -->
+{% for name in page.section_names %}
+<!-- {{ name | capitalize }} -->
 <div class="sg-section">
-	<h2 id="typography">Typography</h2>
-	<p>Default typography styles.</p>
+	<h2 id="{{ name }}">{{ name | capitalize }}</h2>
+	{% for pattern in site.patterns %}{% if pattern.category == name %}
+	<div class="sg-pattern">
+		<h3 class="sg-pattern-name">{{ pattern.name }}</h3>
+		{% if pattern.usage %}<p class="sg-pattern-usage">{{ pattern.usage }}</p>{% endif %}
+		<div class="sg-pattern-preview">
+			{{ pattern.output }}
+		</div>
+		<div class="sg-pattern-details">
+      {% highlight html %}
+        {{ pattern.content }}
+      {% endhighlight %}
+		</div>
+	</div>
+  {% endif %}{% endfor %}
 </div>
-<!-- Grouping content -->
-<div class="sg-section">
-	<h2>Grouping content</h2>
-	
+{% endfor %}
 </div>
-<!-- Text-level semantics -->
-<div class="sg-section">
-	<h2>Text-level semantics</h2>
-	
-</div>
-<!-- Tabular data -->
-<div class="sg-section">
-	<h2>Tabular data</h2>
-	
-</div>
-<!-- Forms -->
-<div class="sg-section">
-	<h2>Forms</h2>
-	
-</div>
-<!-- Patterns -->
-<div class="sg-section">
-	<h2>Patterns</h2>
-	
-	{% for pattern in site.patterns %}{{ pattern.output }}{% endfor %}
-</div>
-</div>
-
 <div class="sg-footer">
-	<p><small>Based on <a href="https://github.com/maban/styleguide" rel="external">Anna Debenham's styleguide</a> and <a href="https://github.com/paulrobertlloyd/barebones" rel="external">Paul Robert Lloyd's barbones</a>. A big <b>thank you</b> to their authors.</small></p>
+	<p><small>Based on <a href="https://github.com/maban/styleguide" rel="external">Anna Debenham's styleguide</a> and <a href="https://github.com/tetue/tinytypo" rel="external">Romy Duhem-Verdière's Tiny Typo</a>. A big <b>thank you</b> to their authors.</small></p>
 </div>
 </body>
 </html>
