@@ -1,0 +1,19 @@
+---
+layout: pattern
+category: form
+name: Sign in form
+---
+<form action="process-form-data" method="post">
+  <p>
+    <small class="caption">Required fields are marked <abbr title="Required">*</abbr></small>
+  </p>
+  <p>
+    <label for="username">Username<abbr title="Required">*</abbr>:</label>
+    <input type="text" id="username" name="username" placeholder="GoatAllMighty" required />
+  </p>
+  <p>
+    <label for="password">Password<abbr title="Required">*</abbr>:</label>
+    <input type="text" id="password" name="password" placeholder="********" required />
+  </p>
+  <button type="submit">Sign in</button>
+</form>

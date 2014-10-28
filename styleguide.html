@@ -1,0 +1,83 @@
+---
+section_names: [sections, grouping-content, embedded, text, code, edits, form, lists, table]
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="viewport" content="width=device-width">
+
+	<title>Styleguide</title>
+
+	<link rel="stylesheet" href="{{ '/css/main.css' | prepend: site.baseurl }}">
+	<link rel="stylesheet" href="{{ '/css/styleguide.css' | prepend: site.baseurl }}">
+	<link rel="stylesheet" href="{{ '/css/highlight.css' | prepend: site.baseurl }}">
+	
+  <script type="text/javascript">
+    WebFontConfig = {
+      google: { families: [
+        'Merriweather:r,ri,b,bi:latin',
+        'Merriweather+Sans:r,b,800:latin'
+      ] }
+    };
+    (function() {
+      var wf = document.createElement('script');
+      wf.src = ('https:' == document.location.protocol ? 'https' : 'http') +
+        '://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js';
+      wf.type = 'text/javascript';
+      wf.async = 'true';
+      var s = document.getElementsByTagName('script')[0];
+      s.parentNode.insertBefore(wf, s);
+    })();
+  </script>
+</head>
+<body class="sg-body">
+
+<div class="sg-header">
+	<h1>Styleguide</h1>
+	<ul class="sg-nav">
+		<li><a href="#colors">Colors</a></li>
+		{% for name in page.section_names %}
+		<li><a href="#{{ name }}">{{ name | capitalize }}</a></li>
+		{% endfor %}
+	</ul>
+</div>
+<div class="sg-main">
+<!-- Swatches -->
+<div class="sg-section">
+	<h2 id="colors">Colors</h2>
+	<ul class="sg-swatches">
+		<li style="background-color: #303030; color: #fff;">
+			<p>Main text</p>
+		</li>
+		<li style="background-color: #c0c0c0">
+			<p>Aside</p>
+		</li>
+	</ul>
+</div>
+{% for name in page.section_names %}
+<!-- {{ name | capitalize }} -->
+<div class="sg-section">
+	<h2 id="{{ name }}">{{ name | capitalize }}</h2>
+	{% for pattern in site.patterns %}{% if pattern.category == name %}
+	<div class="sg-pattern">
+		<div class="sg-pattern-info">
+      <h3 class="sg-pattern-name">{{ pattern.name }}</h3>
+      <div class="sg-pattern-related-links">
+        <a href="{{ pattern.url }}">View separately</a>
+      </div>
+    </div>
+    <div class="sg-pattern-preview">
+      {{ pattern.content }}
+    </div>
+	</div>
+  {% endif %}{% endfor %}
+</div>
+{% endfor %}
+</div>
+<div class="sg-footer">
+	<p><small>Based on <a href="https://github.com/maban/styleguide" rel="external">Anna Debenham's styleguide</a> and <a href="https://github.com/tetue/tinytypo" rel="external">Romy Duhem-Verdière's Tiny Typo</a>. A big <b>thank you</b> to their authors.</small></p>
+</div>
+</body>
+</html>
