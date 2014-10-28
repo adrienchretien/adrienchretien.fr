@@ -38,9 +38,11 @@ section_names: [sections, grouping-content, embedded, text, code, edits, form, l
 	<h1>Styleguide</h1>
 	<ul class="sg-nav">
 		<li><a href="#colors">Colors</a></li>
+		{% for name in page.section_names %}
+		<li><a href="#{{ name }}">{{ name | capitalize }}</a></li>
+		{% endfor %}
 	</ul>
 </div>
-
 <div class="sg-main">
 <!-- Swatches -->
 <div class="sg-section">
@@ -60,16 +62,15 @@ section_names: [sections, grouping-content, embedded, text, code, edits, form, l
 	<h2 id="{{ name }}">{{ name | capitalize }}</h2>
 	{% for pattern in site.patterns %}{% if pattern.category == name %}
 	<div class="sg-pattern">
-		<h3 class="sg-pattern-name">{{ pattern.name }}</h3>
-		{% if pattern.usage %}<p class="sg-pattern-usage">{{ pattern.usage }}</p>{% endif %}
-		<div class="sg-pattern-preview">
-			{{ pattern.output }}
-		</div>
-		<div class="sg-pattern-details">
-      {% highlight html %}
-        {{ pattern.content }}
-      {% endhighlight %}
-		</div>
+		<div class="sg-pattern-info">
+      <h3 class="sg-pattern-name">{{ pattern.name }}</h3>
+      <div class="sg-pattern-related-links">
+        <a href="{{ pattern.url }}">View separately</a>
+      </div>
+    </div>
+    <div class="sg-pattern-preview">
+      {{ pattern.content }}
+    </div>
 	</div>
   {% endif %}{% endfor %}
 </div>

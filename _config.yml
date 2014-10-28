@@ -24,4 +24,5 @@ excerpt_separator: "\r\n\r\n"
 
 # Collections
 collections:
-- patterns
+  patterns:
+    output: true
