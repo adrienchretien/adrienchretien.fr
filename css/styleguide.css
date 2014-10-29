@@ -22,6 +22,10 @@
 
 /* Detailed styles */
 
+.sg-html {
+  background-color: #fff;
+}
+
 .sg-body {
 	margin: 0 1.5em;
   padding: 0;
