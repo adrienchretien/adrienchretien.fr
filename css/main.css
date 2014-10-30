@@ -170,21 +170,21 @@ small,
 /* Theme */
 /* ----------------------------------------------------------*/
 a {
-  color: dodgerblue;
+  color: #0e5599;
 }
 
 a:active,
 a:focus,
 a:hover {
-  color: #0E5599;
+  color: #1B3051;
 }
 
 body {
-  color: #555;
+  color: #333;
 }
 
 html {
-  background-color: #fff;
+  background-color: #fafbfc;
 }
 
 .caption,
@@ -194,5 +194,5 @@ html {
 
 .h-entry,
 .list-posts__post {
-  border-color: #eaeaea;
+  border-color: #e2e2e2;
 }
