@@ -1,8 +1,10 @@
-<header role="banner" class="h-card">
+<header class="p-header h-card">
+  <div class="big-border--left">
   {% if page.url == '/'%}
     <h1><a href="{{ site.baseurl }}/" class="p-name u-url" rel="me">{{ site.title }}</a></h1>
     <p class="subtitle">{{ site.description }}</p>
   {% else %}
-    <a href="{{ site.baseurl }}/" class="logo p-name u-url" rel="me">{{ site.title }}</a>
+    <a href="{{ site.baseurl }}/" class="logo--mini p-name u-url" rel="me">{{ site.title }}</a>
   {% endif %}
+  </div>
 </header>
