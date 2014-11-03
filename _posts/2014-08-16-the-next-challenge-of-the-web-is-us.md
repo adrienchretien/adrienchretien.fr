@@ -8,5 +8,5 @@ tags: citation web 'progressive enhancement' 'graceful degradation'
 ---
 
 <blockquote>
-<p lang="en">“Polyfills, abstractions and libraries are liabilities as well. The more you rely on them, the more you have to be sure this things are secured, the more you have to introduce people to them. And explain to them. And saying that everybody that starts with web development knows what Sass is. It’s just arrogant.”</p>
+<p lang="en">Polyfills, abstractions and libraries are liabilities as well. The more you rely on them, the more you have to be sure this things are secured, the more you have to introduce people to them. And explain to them. And saying that everybody that starts with web development knows what Sass is. It’s just arrogant.</p>
 </blockquote>
