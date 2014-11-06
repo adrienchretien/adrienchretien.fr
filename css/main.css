@@ -15,6 +15,14 @@ blockquote {
   margin-left: 1.5em;
   margin-right: 1.5em;
 }
+blockquote::before {
+  content: '“';
+  float: left;
+  margin-left: -.65em;
+  margin-top: -.3em;
+  font-size: 2em;
+  font-weight: bold;
+}
 
 blockquote em {
   font-weight: bold;
@@ -89,6 +97,16 @@ h4,
   line-height: 1.4;
 }
 
+h5,
+h6 {
+  font-size: 1em;
+  font-weight: bold;
+}
+
+h6 {
+  font-style: italic;
+}
+
 html {
   font-size: 100%;
 }
@@ -114,16 +132,20 @@ small,
 /* Modules */
 /* ----------------------------------------------------------*/
 
+/* Shared styles */
+.entry__content,
+.list-posts {
+  max-width: 640px;
+  margin: 0 auto;
+}
+
 /* Big border */
 .big-border--left {
   padding-left: 2em;
   padding-right: 2em;
   border-left: 10em solid;
-  overflow: hidden;
-  
-  
+  overflow: hidden;  
 }
-
 @media screen and (max-width: 800px) {
   .big-border--left {
     border-width: .5em;
@@ -132,51 +154,55 @@ small,
   }
 }
 
-/* Caption */
-.caption {
-  margin-top: 0;
+/* Entry */
+.entry {
+  margin-bottom: 2em;
+}
+.entry + .entry {
+  border-top: 1px solid;
+  margin-top: 2em;
 }
 
-/* Content */
-.content {
-  border-bottom: 1px solid;
-  padding-bottom: 1em;
-}
-
-.content__header {
+.entry__header {
   text-align: center;
-}
-
-.e-content,
-.p-summary {
-  max-width: 640px;
-  margin: 0 auto;
 }
 
 /* List posts */
 .list-posts {
-  margin: 1em 0;
+  margin-bottom: 1em;
+  margin-top: 1em;
   padding: 0;
   list-style: none;
 }
   .list-posts__post {
-    border-bottom: 1px solid;
+    display: table;
+    table-layout: fixed;
+    width: 100%;
   }
-  .list-posts__date::after {
-    content: " − ";
+  .list-posts__date {
+    display: table-cell;
+    width: 8em;
+    padding-right: .5em;
+    text-align: right;
   }
 
 /* Logo */
 .logo--mini {
   display: block;
   margin: 1em 0;
+  border-bottom: none;
+}
+.logo--mini:active,
+.logo--mini:focus,
+.logo--mini:hover {
+  border-bottom: none;
 }
 
 /* Meta */
 .meta {
   margin: 0;
 }
-  .meta-separator::before {
+  .meta-separator:before {
     content: "\2022";
     margin-left: .5em;
     margin-right: .5em;
@@ -203,6 +229,13 @@ body {
   color: #333;
 }
 
+blockquote,
+caption,
+figcaption,
+.caption {
+  color: #444;
+}
+
 code {
   background-color: #cbe3fa;
 }
@@ -211,29 +244,19 @@ html {
   background-color: #fafbfc;
 }
 
-.caption,
-.list-articles__date {
-  color: #808080;
-}
-
-.h-entry,
-.list-posts__post {
+.entry + .entry {
   border-color: #e2e2e2;
 }
 
 .p-header {
   background-color: #f2f2f2;
+  border-color: #0A4074;
 }
 .p-footer {
   background-color: #151515;
+  border-color: #222;
   color: #fff;
 }
-.p-header .big-border--left {
-  border-color: #0A4074;
-}
-.p-main .big-border--left {
+.p-main {
   border-color: #083662;
-}
-.p-footer .big-border--left {
-  border-color: #222;
 }
