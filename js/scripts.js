@@ -60,10 +60,11 @@ LastfmAPI.prototype = {
     }
 };
 
-NowPlaying = function(api, user, callback, interval) {
+NowPlaying = function(api, user, success, error, interval) {
     this.api = api;
     this.user = user;
-    this.callback = callback;
+    this.success = success;
+    this.error = error || function(error) { console && console.log(error); };
     
     /* AutoUpdate frequency - Last.fm API rate limits at 1/sec */
     this.interval = interval || 5;
@@ -75,7 +76,7 @@ NowPlaying.prototype = {
         this.api.getNowPlayingTrack(
             this.user,
             jQuery.proxy(this.handleNowPlayingTrackResponse, this), 
-            function(error) { console && console.log(error); }
+            this.error
         );
     },
   
@@ -84,7 +85,7 @@ NowPlaying.prototype = {
         this.api.getAlbumInfo(
             mbid,
             jQuery.proxy(this.handleAlbumInfoResponse, this, track),
-            function(error) { console && console.log(error); }
+            this.error
         );
     },
     
@@ -114,10 +115,10 @@ NowPlaying.prototype = {
         if (response) {
             track.cover = response.image;
           
-            this.callback(track);
+            this.success(track);
         }
         else {
-            this.callback(null);
+            this.success(null);
         }
     }
       
@@ -126,43 +127,60 @@ NowPlaying.prototype = {
 /** Personnal script */
 
 (function (document) {
-  function displayTrack(track) {
-    // TODO: Execute only if track is not null.
-    // TODO: Better css style.
+  var WidgetLastFm = function(track) {
     // TODO: Reduce browser reflow or repaints by verifying the .js-lastfm content.
-    function setContext() {
-      var $footer = $('.p-footer'),
-          $aside = $('<aside><p><small class="js-lastfm smaller"></small></p></aside>').prependTo($footer);
+    // TODO: Better css style.
+    var $aside = null,
+        $widget = null;
+    
+    function updateHtml(track) {
+      var newHtml = '<img class="js-lastfm__cover" ' + 
+                    'src="' + track.cover[0]['#text'] + '" ' + 
+                    'alt="Jaquette de l\'album ' + track.album + '." />' +
+                    'Écoute actuellement : ' + track.name + " de " + track.artist + '.';
+      var oldHtml = $widget.html();
       
-      return $('.js-lastfm', $footer);
+      if (oldHtml != newHtml) {
+        $widget.html(newHtml);
+      }
     }
     
-    function getContext() {
-      var $context = $('.js-lastfm');
+    function update(track) {
+      if (track) {
+        updateHtml(track);
+        $widget.show();
+      } else {
+        hide();
+      }
+    }
+    
+    function handleAPIError(error) {
+      // Uncomment that line for debug.
+      // console && console.log(error);
       
-      $context = $context.length ? $context : setContext();
-      
-      return $context;
+      $widget.hide();
     }
     
-    function updateAlbumCover() {
+    // Widget initialization    
+    $aside = $('.p-footer aside');
+    $widget = $('.js-lastfm', $aside);
+
+    if ($widget.length === 0) {
+      $widget = $('<p class="js-lastfm"></p>');
+      $widget.appendTo($aside);
     }
     
-    var $container = getContext();
-    
-    if (track) {
-      var $cover = $('<img class="js-lastfm__cover" src="' + track.cover[0]['#text'] + '" alt="Jaquette de l\'album ' + track.album + '." />');
-      $container.text(" Écoute actuellement : " + track.name + " de " + track.artist + ".");
-      $cover.prependTo($container);
-    } else {
-      $container.text("Il est temps de s'accorder un peu de calme.");
+    return {
+      update: update,
+      handleAPIError: handleAPIError
     }
-  }
+  };
   
   $(document).ready(function() {
     var username = 'adrienchretien',
+        widget = new WidgetLastFm(),
         api = new LastfmAPI('52693228775ec835d6cccc072559fe2e'),
-        np = new NowPlaying(api, username, displayTrack, 45);
+        np = new NowPlaying(api, username, widget.update, widget.handleAPIError, 45);
     
     np.autoUpdate();
   });
