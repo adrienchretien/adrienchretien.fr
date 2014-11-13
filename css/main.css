@@ -113,6 +113,7 @@ html {
 
 img {
   max-width: 100%;
+  height: 100%;
   vertical-align: middle;
 }
 
@@ -152,6 +153,12 @@ small,
     padding-left: 1em;
     padding-right: 1em;
   }
+}
+
+/* Book-cover */
+.book-cover {
+  float: left;
+  margin-right: 1em;
 }
 
 /* Entry */

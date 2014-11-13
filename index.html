@@ -2,11 +2,7 @@
 layout: default
 ---
 {% for post in paginator.posts %}
-  {% if post.category == 'liens' %}
-{% include article-link.html %}
-  {% else %}
-{% include article.html %}
-  {% endif %}
+{% include entry.html %}
 {% endfor %}
 
 {% if paginator.total_pages > 1 %}
