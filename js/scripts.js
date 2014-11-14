@@ -104,7 +104,7 @@ NowPlaying.prototype = {
             var track = {
                 name: response.name,
                 artist: response.artist['#text'],
-                album: response.album['#test']
+                album: response.album['#text']
             };
                 
             this.updateAlbum(response.album.mbid, track);
@@ -135,9 +135,14 @@ NowPlaying.prototype = {
     
     function updateHtml(track) {
       var newHtml = '<img class="js-lastfm__cover" ' + 
-                    'src="' + track.cover[0]['#text'] + '" ' + 
+                    'src="' + track.cover[1]['#text'] + '" ' +
                     'alt="Jaquette de l\'album ' + track.album + '." />' +
-                    'Écoute actuellement : ' + track.name + " de " + track.artist + '.';
+                    '<div class="js-lastfm__details">' +
+                      '<span class="js-lastfm__title">Écoute actuellement : </span>' +
+                      '<p class="js-lastfm__work">' +
+                        '<cite>' + track.name + '</cite> de ' + track.artist + '.' +
+                      '</p>' +
+                    '</div>';
       var oldHtml = $widget.html();
       
       if (oldHtml != newHtml) {
@@ -156,7 +161,7 @@ NowPlaying.prototype = {
     
     function handleAPIError(error) {
       // Uncomment that line for debug.
-      // console && console.log(error);
+      console && console.log(error);
       
       $widget.hide();
     }
@@ -166,7 +171,7 @@ NowPlaying.prototype = {
     $widget = $('.js-lastfm', $aside);
 
     if ($widget.length === 0) {
-      $widget = $('<p class="js-lastfm"></p>');
+      $widget = $('<div class="js-lastfm"></div>');
       $widget.appendTo($aside);
     }
     
