@@ -128,8 +128,6 @@ NowPlaying.prototype = {
 
 (function (document) {
   var WidgetLastFm = function(track) {
-    // TODO: Reduce browser reflow or repaints by verifying the .js-lastfm content.
-    // TODO: Better css style.
     var $aside = null,
         $widget = null;
     
@@ -161,7 +159,7 @@ NowPlaying.prototype = {
     
     function handleAPIError(error) {
       // Uncomment that line for debug.
-      console && console.log(error);
+      // console && console.log(error);
       
       $widget.hide();
     }
@@ -172,6 +170,7 @@ NowPlaying.prototype = {
 
     if ($widget.length === 0) {
       $widget = $('<div class="js-lastfm"></div>');
+      $widget.hide();
       $widget.appendTo($aside);
     }
     

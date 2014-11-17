@@ -227,7 +227,7 @@ small,
 .js-lastfm {
   display: inline-block;
   margin: 1em 0 0;
-  padding: 1em;
+  padding: .5em;
 }
 .js-lastfm__cover {
   float: left;
@@ -235,7 +235,7 @@ small,
   width: 2em;
 }
 .js-lastfm__details {
-  margin-left: 3em;
+  margin-left: 2.5em;
   text-align: left;
 }
   .js-lastfm__title {
