@@ -28,7 +28,7 @@ LastfmAPI.prototype = {
         })
         .error(function() {
             // JSONP limitations mean we'll only get timeout errors
-            console.log({error: 0, method: method, message: 'HTTP Error'});
+            // console.log({error: 0, method: method, message: 'HTTP Error'});
         });
     },
     

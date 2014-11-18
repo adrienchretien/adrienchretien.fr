@@ -30,7 +30,7 @@ blockquote em {
 
 body {
   margin: 0;
-  font: 1em/1.6 'Source Sans Pro', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font: 1em/1.5 'Source Sans Pro', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
 @media screen and (min-width: 800px) {
   body {
