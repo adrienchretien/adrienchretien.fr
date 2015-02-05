@@ -1,0 +1,91 @@
+---
+layout: null
+---
+<!DOCTYPE html>
+<html lang="{{ site.lang }}">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width">
+  <meta name="description" content="{% if page.meta %}{{ page.meta }}{% else %}{{ site.description }}{% endif %}">
+  <link rel="alternate" type="application/rss+xml" href="{{ "/feed.xml" | prepend: site.baseurl | prepend: site.url }}"/>
+  <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
+  <title>{% if page.title %}{{ page.title }} | {% endif %}{{ site.title }}</title>
+
+  <!-- Webfonts -->
+  <script src="{{ "/js/2015.min.js" | prepend: site.baseurl }}"></script>
+
+  <!-- Stylecheets -->
+  <link rel="stylesheet" href="{{ "/css/2015.css" | prepend: site.baseurl }}">
+  
+  <!-- Scripts -->
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js" defer></script>
+  <script src="{{ "/js/scripts.js" | prepend: site.baseurl }}" defer></script>
+</head>
+<body>
+<header id="header" class="clearfix">
+  <div class="inner">
+    <a class="invisible" href="#content">Skip to content</a>
+    <div class="left">
+      <a class="logo" href="">Adrien Chrétien</a>
+    </div>
+    <nav>
+      <h2 class="invisible">Navigation</h2>
+      <input type="checkbox" id="nav-trigger">
+      <label for="nav-trigger" id="nav-trigger-label" class="right">Menu</label>
+      <ul class="nav list-nostyle">
+        <li class="nav__item"><a class="nav__link" href="">Accueil</a></li><!--
+        --><li class="nav__item"><a class="nav__link" href="">Réalisations</a></li><!--
+        --><li class="nav__item"><a class="nav__link  nav__link--active" href="">Blog</a></li><!--
+        --><li class="nav__item"><a class="nav__link" href="">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+<main id="content">
+  <div class="article__head inner">
+    <h1>Très gros titre ou titre de premier niveau</h1>
+  </div>
+  <div class="inner">
+  <div class="article__meta">
+    <p class="mb0"><small>Publié le : 27/01/2015</small></p>
+    <p class="mt0"><small>Catégorie&nbsp;: <a href="">Front-end</a></small></p>
+  </div>
+  <div class="article__content">
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero sit eveniet vel excepturi consectetur sapiente tenetur? A eius nemo iusto eveniet assumenda molestias, modi eaque soluta dolore, facere praesentium eum aperiam incidunt blanditiis quos optio eos, deserunt ratione amet. Iure quam, est amet aspernatur atque!</p>
+    <h2>Titre de second niveau</h2>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto reprehenderit autem id ipsam omnis maiores harum nisi tempora veniam, laborum architecto maxime labore veritatis, aperiam sunt nihil magni nesciunt quia.</p>
+    <figure>
+      <img src="http://placehold.it/800x600" alt="" />
+      <figcaption>Picture placeholder</figcaption>
+    </figure>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vitae dolor nam voluptates dolorem eaque. Aliquid in ex, nemo quidem ullam.</p>
+    <h3>Titre de troisième niveau</h3>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus veritatis fugit, modi laboriosam quibusdam consectetur minima reiciendis, magnam, iusto aliquam nesciunt tempora! Veniam eligendi harum tempore earum veritatis placeat cupiditate. Dolorum vero hic distinctio perferendis commodi tenetur minus labore sunt dolores eaque, harum eligendi fugiat.</p>
+    <h4>Titre de quatrième niveau</h4>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem repudiandae facilis debitis consequatur rem, itaque. Beatae facere ducimus earum unde. Nam consectetur sapiente beatae quis qui voluptas alias recusandae ratione eaque aspernatur accusamus cum, error iure veniam aliquid quaerat soluta iste voluptatibus excepturi. Nulla, tempora.</p>
+  </div>
+  <div class="clearfix"></div>
+  </div>
+  <p id="paginglabel" class="invisible">Pagination</p>
+  <ul class="pagination" aria-labelledby="paginglabel">
+    <li class="pagination__item"><a class="pagination__link pagination__link--previous" href="">Billet précédent&nbsp;: Lorem ipsum</a></li><!--
+    --><li class="pagination__item"><a class="pagination__link" href="">Billet suivant&nbsp;: Lorem ipsum</a></li>
+  </ul>
+</main>
+<footer id="footer">
+  <div class="inner">
+    <div class="grid small">
+      <div class="grid__cell">
+        <h2 class="h3">Titre de niveau 2</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iure nisi aperiam natus ipsum inventore, iusto deleniti temporibus veritatis reiciendis eos.</p>
+      </div>
+      <div class="grid__cell">
+        <h2 class="h3">Titre de niveau 2</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nam dolorum mollitia quibusdam laboriosam, voluptate, explicabo consequatur libero corporis.</p>
+      </div>
+    </div>
+  </div>
+</footer>
+</body>
+</html>
