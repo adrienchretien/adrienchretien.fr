@@ -1,33 +1,17 @@
 <head>
+  <!-- Meta informations -->
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
   <meta name="viewport" content="width=device-width">
   <meta name="description" content="{% if page.meta %}{{ page.meta }}{% else %}{{ site.description }}{% endif %}">
-
+  <link rel="alternate" type="application/rss+xml" title="Suivre l'activité du blog" href="{{ "/feed.xml" | prepend: site.baseurl | prepend: site.url }}"/>
+  <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
+  <link rel="shortcut icon" href="{{ "/favicon.ico" | prepend: site.baseurl }}"/>
   <title>{% if page.title %}{{ page.title }} | {% endif %}{{ site.title }}</title>
 
-  <link rel="alternate" type="application/rss+xml" href="{{ "/feed.xml" | prepend: site.baseurl | prepend: site.url }}"/>
-  <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
-  <link rel="stylesheet" href="">
-  <link rel="stylesheet" href="{{ "/css/main.css" | prepend: site.baseurl }}">
+  <!-- Webfonts -->
+  <script src="{{ "/js/2015.min.js" | prepend: site.baseurl }}"></script>
 
-  <script type="text/javascript">
-    WebFontConfig = {
-      google: { families: [
-        'Source+Sans+Pro:300,400,400italic,700,700italic,900'
-      ] }
-    };
-    (function() {
-      var wf = document.createElement('script');
-      wf.src = ('https:' == document.location.protocol ? 'https' : 'http') +
-        '://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js';
-      wf.type = 'text/javascript';
-      wf.async = 'true';
-      var s = document.getElementsByTagName('script')[0];
-      s.parentNode.insertBefore(wf, s);
-    })();
-  </script>
-  
-  <script src="//ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js" defer></script>
-  <script src="js/scripts.js" defer></script>
+  <!-- Stylecheets -->
+  <link rel="stylesheet" href="{{ "/css/2015.css" | prepend: site.baseurl }}" media="screen, print">
 </head>

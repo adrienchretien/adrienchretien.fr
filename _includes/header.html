@@ -1,10 +1,24 @@
-<header class="h-card">
-  <div class="p-header big-border--left">
-  {% if page.url == '/'%}
-    <h1><a href="{{ site.baseurl }}/" class="p-name u-url" rel="me">{{ site.title }}</a></h1>
-    <p class="subtitle">{{ site.description }}</p>
-  {% else %}
-    <a href="{{ site.baseurl }}/" class="logo--mini p-name u-url" rel="me">{{ site.title }}</a>
-  {% endif %}
+<!-- start header -->
+<header id="header" role="banner">
+  <div class="skip">
+    <a class="skip__link" href="#content">Aller au contenu</a>
+    <a class="skip__link" href="#content">Aller au menu</a>
+  </div>
+  <div class="container clearfix">
+    <div class="left">
+      <a class="logo" href="/">Adrien Chrétien</a>
+    </div>
+    <nav role="navigation">
+      <p class="invisible">Navigation</p>
+      <input type="checkbox" id="nav-trigger">
+      <label for="nav-trigger" id="nav-trigger-label" class="right">Menu</label>
+      <ul class="nav list-nostyle">
+        <li class="nav__item"><a class="nav__link" href="/" accesskey="1">Accueil</a></li><!--
+        --><li class="nav__item"><a class="nav__link" href="/realisations" accesskey="2">Réalisations</a></li><!--
+        --><li class="nav__item"><a class="nav__link  nav__link--active" href="/blog" accesskey="3">Blog</a></li><!--
+        --><li class="nav__item"><a class="nav__link" href="/contact" accesskey="4">Contact</a></li>
+      </ul>
+    </nav>
   </div>
 </header>
+<!-- end header -->

@@ -77,4 +77,4 @@ function loadFont(fontName, woffUrl, woff2Url, onlyLoadFontOnSecondPageload) {
 }
 
 /* Run the script once loaded */
-loadFont('asap', '/css/asap-woff.min.css', '/css/asap-woff2.min.css');
+loadFont('asap', '/css/asap-woff.css', '/css/asap-woff2.css');

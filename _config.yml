@@ -7,6 +7,15 @@ description: "Notes et liens d'un intégrateur web"
 url: "http://achretien.fr"
 
 exclude: [LICENSE, README.md, CNAME, Gemfile, Gemfile.lock]
+footer_quotes:
+  - "See you space cowboy…"
+  - "Easy come, easy go…"
+  - "To be continued."
+  - "Do you have a comrade?"
+  - "Life is but a dream…"
+  - "See you space samurai…"
+  - "Are you living in the real world?"
+  - "You're gonna carry that weight."
 
 defaults:
   - 
@@ -21,6 +30,8 @@ markdown: kramdown
 paginate: 10
 permalink: pretty
 excerpt_separator: "\r\n\r\n"
+sass:
+  style: :compressed
 
 # Collections
 collections:
