@@ -30,7 +30,8 @@ html { box-sizing: border-box; }
 
 /* reset minimum */
 html, body, blockquote, ul, ol, form, button { margin: 0; padding: 0; }
-button { border: 0; }
+/*button { border: 0; }*/
+figure { text-align: center; }
 p, ul, ol, dl, blockquote, pre, td, th, label, textarea {
   font-size: 1em; /* equiv 14px */
   line-height: 1.5;
@@ -424,6 +425,12 @@ body { color: #393939; }
 
 a {
   color: #0c4684;
+}
+
+kbd {
+  border: 1px solid #666;
+  border-radius: .2em;
+  padding: .2em .4em;
 }
 
 h1,

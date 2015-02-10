@@ -10,7 +10,8 @@
 .sg-section > h4,
 .sg-section > p,
 .sg-swatches {
-	font-family: Arial, sans-serif;
+	font-family: Verdana, Geneva, sans-serif;
+  font-style: normal !important;
 	color: #303030;
 }
 

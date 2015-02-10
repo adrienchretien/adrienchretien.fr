@@ -1,5 +1,5 @@
 ---
-section_names: [sections, grouping-content, embedded, text, code, edits, form, lists, table, modules, js]
+section_names: [sections, grouping-content, text, code, edits, form, lists, table, modules]
 ---
 <!DOCTYPE html>
 <html class="sg-html" lang="en">
@@ -10,27 +10,13 @@ section_names: [sections, grouping-content, embedded, text, code, edits, form, l
 
 	<title>Styleguide</title>
 
-	<link rel="stylesheet" href="{{ '/css/main.css' | prepend: site.baseurl }}">
-	<link rel="stylesheet" href="{{ '/css/styleguide.css' | prepend: site.baseurl }}">
+  <!-- Webfonts -->
+  <script src="{{ "/js/2015.min.js" | prepend: site.baseurl }}"></script>
+
+  <!-- Stylecheets -->
 	<link rel="stylesheet" href="{{ '/css/highlight.css' | prepend: site.baseurl }}">
-	
-  <script type="text/javascript">
-    WebFontConfig = {
-      google: { families: [
-        'Merriweather:r,ri,b,bi:latin',
-        'Merriweather+Sans:r,b,800:latin'
-      ] }
-    };
-    (function() {
-      var wf = document.createElement('script');
-      wf.src = ('https:' == document.location.protocol ? 'https' : 'http') +
-        '://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js';
-      wf.type = 'text/javascript';
-      wf.async = 'true';
-      var s = document.getElementsByTagName('script')[0];
-      s.parentNode.insertBefore(wf, s);
-    })();
-  </script>
+	<link rel="stylesheet" href="{{ '/css/2015.css' | prepend: site.baseurl }}">
+	<link rel="stylesheet" href="{{ '/css/styleguide.css' | prepend: site.baseurl }}">
 </head>
 <body class="sg-body">
 
@@ -47,24 +33,6 @@ section_names: [sections, grouping-content, embedded, text, code, edits, form, l
 <!-- Swatches -->
 <div class="sg-section">
 	<h2 id="colors">Colors</h2>
-	<h3>Main contrast</h3>
-  <ul class="sg-swatches">
-		<li style="background-color: #fafbfc;">
-			<p>Background</p>
-		</li>
-		<li style="background-color: #eaeaea;">
-			<p>Borders</p>
-		</li>
-		<li style="background-color: #333; color: #fff;">
-			<p>Main text</p>
-		</li>
-		<li style="background-color: #0e5599; color: #fff;">
-			<p>Links</p>
-		</li>
-		<li style="background-color: #092b5a; color: #fff;">
-			<p>Links alt.</p>
-		</li>
-	</ul>
 	<h3>Informations</h3>
   <ul class="sg-swatches">
 		<li style="background-color: #3f98ed;">
