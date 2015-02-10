@@ -2,7 +2,7 @@
 <header id="header" role="banner">
   <div class="skip">
     <a class="skip__link" href="#content">Aller au contenu</a>
-    <a class="skip__link" href="#content">Aller au menu</a>
+    <a class="skip__link" href="#menu">Aller au menu principal</a>
   </div>
   <div class="container clearfix">
     <div class="left">
@@ -12,11 +12,11 @@
       <p class="invisible">Navigation</p>
       <input type="checkbox" id="nav-trigger">
       <label for="nav-trigger" id="nav-trigger-label" class="right">Menu</label>
-      <ul class="nav list-nostyle">
-        <li class="nav__item"><a class="nav__link" href="/" accesskey="1">Accueil</a></li><!--
-        --><li class="nav__item"><a class="nav__link" href="/realisations" accesskey="2">Réalisations</a></li><!--
-        --><li class="nav__item"><a class="nav__link  nav__link--active" href="/blog" accesskey="3">Blog</a></li><!--
-        --><li class="nav__item"><a class="nav__link" href="/contact" accesskey="4">Contact</a></li>
+      <ul class="nav list-nostyle" id="menu">
+        <li class="nav__item"><a class="nav__link{% if page.menu-index == 1 %} nav__link--active{% endif %}" href="/" accesskey="1">Accueil</a></li><!--
+        --><li class="nav__item"><a class="nav__link{% if page.menu-index == 2 %} nav__link--active{% endif %}" href="/realisations" accesskey="2">Réalisations</a></li><!--
+        --><li class="nav__item"><a class="nav__link{% if page.menu-index == 3 %} nav__link--active{% endif %}" href="/blog" accesskey="3">Blog</a></li><!--
+        --><li class="nav__item"><a class="nav__link{% if page.menu-index == 4 %} nav__link--active{% endif %}" href="/contact" accesskey="4">Contact</a></li>
       </ul>
     </nav>
   </div>
