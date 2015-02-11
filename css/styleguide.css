@@ -78,7 +78,9 @@
       float: right;
     }
       
-  /*.sg-pattern-preview*/
+  .sg-pattern-preview {
+    position: relative;
+  }
 
 /*ul*/.sg-swatches {
 	padding-left: 0;

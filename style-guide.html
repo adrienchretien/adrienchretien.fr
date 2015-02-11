@@ -1,5 +1,6 @@
 ---
-section_names: [sections, grouping-content, text, code, edits, form, lists, table, modules]
+section_names: [sections, grouping-content, text, code, edits, form, lists, table, modules, layouts]
+redirect_from: "/styleguide"
 ---
 <!DOCTYPE html>
 <html class="sg-html" lang="en">
@@ -8,7 +9,7 @@ section_names: [sections, grouping-content, text, code, edits, form, lists, tabl
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 	<meta name="viewport" content="width=device-width">
 
-	<title>Styleguide</title>
+	<title>Style Guide</title>
 
   <!-- Webfonts -->
   <script src="{{ "/js/2015.min.js" | prepend: site.baseurl }}"></script>
@@ -21,7 +22,7 @@ section_names: [sections, grouping-content, text, code, edits, form, lists, tabl
 <body class="sg-body">
 
 <div class="sg-header">
-	<h1>Styleguide</h1>
+	<h1>Style Guide</h1>
 	<ul class="sg-nav">
 		<li><a href="#colors">Colors</a></li>
 		{% for name in page.section_names %}
@@ -30,6 +31,8 @@ section_names: [sections, grouping-content, text, code, edits, form, lists, tabl
 	</ul>
 </div>
 <div class="sg-main">
+<!--Introduction-->
+<p>This style guide helps me preserving consistency over the code and the general design of the project. The idea is to gather here all the designed parts and get a quick overview.</p>
 <!-- Swatches -->
 <div class="sg-section">
 	<h2 id="colors">Colors</h2>

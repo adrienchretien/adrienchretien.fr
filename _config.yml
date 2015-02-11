@@ -32,6 +32,8 @@ permalink: pretty
 excerpt_separator: "\r\n\r\n"
 sass:
   style: :compressed
+gems:
+  - jekyll-redirect-from
 
 # Collections
 collections:
