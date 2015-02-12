@@ -3,7 +3,7 @@ title: "Le block formatting context"
 meta: "Un block formatting context permet de régler quelques petits problèmes liés à des enfants ou des éléments adjacents déclarés flottants."
 date: 2014-08-06 21:04 +02:00
 category: notes
-tags: css technique
+tag: css
 ---
 
 Un <i lang="en">[block formatting context](http://www.w3.org/TR/CSS21/visuren.html#block-formatting)</i> (BFC) permet de régler quelques petits problèmes liés à des enfants ou des éléments adjacents déclarés flottants.

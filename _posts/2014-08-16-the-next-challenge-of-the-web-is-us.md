@@ -4,7 +4,7 @@ meta: "Christian nous parle de preogressive enhancement, d’offline first, de w
 external-link: http://youtu.be/QPRqQH_30hU
 date: 2014-08-16 13:58 +02:00
 category: liens
-tags: citation web 'progressive enhancement' 'graceful degradation'
+tag: "progressive enhancement"
 ---
 
 <blockquote>

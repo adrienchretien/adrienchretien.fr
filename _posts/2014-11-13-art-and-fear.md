@@ -3,7 +3,7 @@ title: Art and fear
 date: 2014-11-13 15:28:46 +01:00
 meta: ""
 category: livres
-tags: art communication philosophie
+tag: art
 ---
 
 <img class="book-cover" src="/images/2014-11-13-art-fear.png" srcset="/images/2014-11-13-art-fear-2x.png 2x" alt=""/>

@@ -4,7 +4,7 @@ meta: "Article motivant de Marc Jenkins sur les difficultés qu’il a rencontr�
 external-link: http://plausiblethought.net/on-blogging/
 date: 2014-08-10 19:04 +02:00
 category: liens
-tags: writing citation
+tag: écrire
 ---
 
 J’ai très apprécié cet article de Marc sur les difficultés qu’il a rencontrés et que je rencontre moi aussi en commençant ce blog.

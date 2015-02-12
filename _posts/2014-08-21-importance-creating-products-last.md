@@ -4,7 +4,7 @@ meta: "Jeremy Keith parle progressive enhancement dans cette interview au magazi
 date: 2014-08-21 15:41 +02:00
 external-link: http://www.creativebloq.com/netmag/jeremy-keith-importance-creating-products-last-81412705
 category: liens
-tags: citation 'progressive enhancement'
+tag: "progressive enhancement"
 ---
 
 <blockquote>

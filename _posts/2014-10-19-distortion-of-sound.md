@@ -4,7 +4,7 @@ meta:
 date: 2014-10-19 15:35 +02:00
 external-link: http://youtu.be/mDZcz-V29_M
 category: liens
-tags: musique compression matériel
+tag: musique
 ---
 
 Ce petit documentaire présente ce que nous perdons avec la compression du son et qu'il est possible de ressentir des émotions plus intenses.
