@@ -81,6 +81,13 @@
   .sg-pattern-preview {
     position: relative;
   }
+  .sg-pattern-preview:after {
+    content: ".";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+  }
 
 /*ul*/.sg-swatches {
 	padding-left: 0;

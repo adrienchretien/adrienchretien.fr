@@ -49,8 +49,8 @@ html, body, blockquote, ul, ol, form, button { margin: 0; padding: 0; }
 /*button { border: 0; }*/
 figure { text-align: center; }
 p, ul, ol, dl, blockquote, pre, td, th, label, textarea {
-  font-size: 1em; /* equiv 14px */
-  line-height: 1.5;
+  font-size: 1em;
+  line-height: 1.5; /* line-height also modified in the main navigation module */
   margin: 1.5em 0;
 }
 
@@ -282,6 +282,14 @@ small, .small { font-size: .9em; }
   }
 }
 
+/* Main navigation container */
+/*.nav-container*/
+@media screen and (min-width: 44em) {
+  .nav-container {
+    float: right;
+  }
+}
+
 /* Pagination container */
 /*.pagination-container*/
 @media screen and (min-width: 73em) {
@@ -329,9 +337,9 @@ small, .small { font-size: .9em; }
 @media screen and (max-width: 44em) {
   .nav {
     position: absolute;
+    z-index: 1;
     top: 4.5em;
     left: 0;
-    display: none;
     width: 100%;
     border-top: 1px solid;
   }
@@ -345,7 +353,6 @@ small, .small { font-size: .9em; }
 }
 @media screen and (min-width: 44em) {
   .nav {
-    float: right;
     border-right: 1px solid;
     line-height: 0;
   }
@@ -381,8 +388,8 @@ small, .small { font-size: .9em; }
     }
 }
 
-#nav-trigger { display: none; }
-#nav-trigger-label {
+/*input[type="checked"]*/#nav-trigger { display: none; }
+/*label*/#nav-trigger-label {
   margin: 0;
   padding: 1.5em 1em;
   border-left: 1px solid;
@@ -390,19 +397,15 @@ small, .small { font-size: .9em; }
   text-decoration: none;
   cursor: pointer;
 }
-#nav-trigger:checked ~ #nav-trigger-label {
-  background-color: #e5e5e5;
-}
-
 @media screen and (min-width: 44.01em) {
   #nav-trigger-label { display: none; }
 }
 @media screen and (max-width: 44em) {
+  #nav-trigger ~ .nav { display: none; }
   #nav-trigger:checked ~ .nav { display: block; }
 }
 
 /* Pagination */
-
 .pagination {
   margin: 0;
   padding-left: 0;
@@ -476,6 +479,10 @@ h1 { text-shadow: 2px 3px 0 rgba(0, 0, 0, .2); }
 #nav-trigger-label,
 .nav,
 .nav__item { border-color: #d0d0d0; }
+
+#nav-trigger:checked ~ #nav-trigger-label {
+  background-color: #e5e5e5;
+}
 
 .nav {
   background-color: #f8f8f8;
