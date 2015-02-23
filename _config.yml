@@ -24,11 +24,16 @@ defaults:
       type: "posts"
     values:
       layout: "post"
+      menu-index: 3
+  - scope:
+      path: "blog"
+    values:
+      menu-index: 3
 
 # Build settings
 markdown: kramdown
 paginate: 10
-permalink: pretty
+permalink: "/blog/:categories/:year/:month/:day/:title/"
 excerpt_separator: "\r\n\r\n"
 sass:
   style: :compressed

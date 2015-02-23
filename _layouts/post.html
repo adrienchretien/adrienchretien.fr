@@ -10,8 +10,8 @@ layout: default
   <!-- end content__head -->
   <!-- start two-columns-first -->
   <aside class="two-columns two-columns--first" role="complementary">
-    <p class="meta-item mb0"><span class="small">Publié le <time class="dt-published" datetime="{{ page.date | date_to_xmlschema }}">{% assign d = page.date | date: "%-d" %}{% case d %}{% when '1' %}{{ d }}er{% else %}{{ d }}{% endcase %} {% assign m = page.date | date: "%-m" %}{% case m %}{% when '1' %}janvier{% when '2' %}février{% when '3' %}mars{% when '4' %}avril{% when '5' %}mai{% when '6' %}juin{% when '7' %}juillet{% when '8' %}août{% when '9' %}septembre{% when '10' %}octobre{% when '11' %}novembre{% when '12' %}décembre{% endcase %} {{ page.date | date: '%Y' }}</time></span></p><!--
-    --><p class="meta-item mt0"><span class="small">Rangé dans&nbsp;: <a class="p-category" href="{{ page.category | prepend: site.baseurl }}">{{ page.category }}</a></span></p>
+    <p class="meta-item mb0"><span class="small">Publié le <time class="dt-published" datetime="{{ page.date | date_to_xmlschema }}">{% assign d = page.date | date: "%-d" %}{% case d %}{% when '1' %}{{ d }}er{% else %}{{ d }}{% endcase %} {% assign m = page.date | date: "%-m" %}{% case m %}{% when '1' %}janvier{% when '2' %}février{% when '3' %}mars{% when '4' %}avril{% when '5' %}mai{% when '6' %}juin{% when '7' %}juillet{% when '8' %}août{% when '9' %}septembre{% when '10' %}octobre{% when '11' %}novembre{% when '12' %}décembre{% endcase %} {{ page.date | date: '%Y' }}</time></span></p>
+    <p class="meta-item mt0"><span class="small">Rangé dans&nbsp;: <a class="p-category" href="{{ page.category | prepend: "/blog/" }}">{{ page.category }}</a></span></p>
   </aside>
   <!-- end two-columns-first -->
   <!-- start two-columns-second -->
