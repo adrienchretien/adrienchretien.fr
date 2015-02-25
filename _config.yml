@@ -16,7 +16,6 @@ footer_quotes:
   - "See you space samurai…"
   - "Are you living in the real world?"
   - "You're gonna carry that weight."
-
 defaults:
   - 
     scope:
@@ -24,11 +23,12 @@ defaults:
       type: "posts"
     values:
       layout: "post"
-      menu-index: 3
-  - scope:
+      menu-index: 2
+  -
+    scope:
       path: "blog"
     values:
-      menu-index: 3
+      menu-index: 2
 
 # Build settings
 markdown: kramdown
