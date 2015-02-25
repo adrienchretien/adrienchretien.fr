@@ -16,18 +16,12 @@ layout: default
   <!-- end two-columns-first -->
   <!-- start two-columns-second -->
   <div class="two-columns two-columns--second e-content">
+    <!-- start e-content -->
     {{ content }}
+    <!-- end e-content -->
   </div>
   <!-- end two-columns-second -->
 </article>
 <!-- end article -->
 
-<!-- start pagination -->
-<nav class="pagination-container">
-  <p id="paginglabel" class="invisible">Pagination</p>
-  <ul class="pagination" aria-labelledby="paginglabel">
-    {% if page.previous %}<li class="pagination__item">Billet précédent<br><a class="pagination__link" href="{{ page.previous.url }}">{{ page.previous.title }}</a></li>{% endif %}
-    {% if page.next %}<li class="pagination__item">Billet suivant<br><a class="pagination__link" href="{{ page.next.url }}">{{ page.next.title }}</a></li>{% endif %}
-  </ul>
-</nav>
-<!-- end pagination -->
+{% include pagination.html %}

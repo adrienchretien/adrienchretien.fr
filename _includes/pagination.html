@@ -1,0 +1,27 @@
+<!-- start pagination -->
+{% assign category = site.categories[page.category] | sort: 'date' %}{% assign category-size = category | size %}
+{% if category-size > 1 %}
+<nav class="pagination-container">
+  <p id="paginglabel" class="invisible">Pagination</p>
+  <ul class="pagination" aria-labelledby="paginglabel">
+  {% for post in category %}
+    {% if post.url == page.url %}
+      {% assign previous-index = forloop.index0 | minus: 1 %}
+      {% unless forloop.first %}{% assign previous = category[previous-index] %}{% endunless %}
+      {% assign next-index = forloop.index0 | plus: 1 %}
+      {% unless forloop.last %}{% assign next = category[next-index] %}{% endunless %}
+
+      {% if previous %}
+    <li class="pagination__item pagination__item--first"><a class="pagination__link pagination__link--prev" href="{{ previous.url }}">Billet précédent</a></li>
+      {% endif %}<!--
+      -->{% if next %}
+    <li class="pagination__item pagination__item--last"><a class="pagination__link pagination__link--next" href="{{ next.url }}">Billet suivant</a></li>
+      {% endif %}
+    {% endif %}
+  {% endfor %}
+  </ul>
+</nav>
+{% else %}
+<p class="pagination-unique-item">C'est le premier billet de cette catégorie, revenez sur <a href="/blog/">la page d'introduction du blog</a> pour découvrir d'autres rubriques.</p>
+{% endif %}
+<!-- end pagination -->

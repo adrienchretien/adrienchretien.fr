@@ -32,7 +32,6 @@ defaults:
 
 # Build settings
 markdown: kramdown
-paginate: 10
 permalink: "/blog/:categories/:year/:month/:day/:title/"
 excerpt_separator: "\r\n\r\n"
 sass:
