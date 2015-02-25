@@ -217,6 +217,7 @@ small,
 }
 
 .mb0 { margin-bottom: 0; }
+.ml3_5 { margin-left: 3.5em; }
 .mt { margin-top: 1.5em; }
 .mt0 { margin-top: 0; }
 
@@ -311,7 +312,7 @@ small,
 /* Specific layouts
  ******************************************************************/
 
-.article-intro { overflow: hidden; }
+/*.article-intro*/
   .article-intro__title { margin: 0; }
   .article-intro__excerpt > p:first-child { margin-top: 1.5em; }
 
@@ -351,6 +352,10 @@ small,
     font-size: 80%;
     line-height: 1.85;
   }
+}
+.date--inline {
+  font-size: .8em;
+  text-transform: uppercase;
 }
 
 /* Logo */
@@ -494,6 +499,7 @@ small,
 }
 .pagination-unique-item { text-align: center; }
 
+
 /* Skip-links */
 .skip__link {
   position: absolute;
@@ -551,8 +557,11 @@ h1 { text-shadow: 2px 3px 0 rgba(0, 0, 0, .2); }
 }
 
 #footer {
-  color: #555;
   border-top: 1px solid #d0d0d0;
+}
+#footer,
+.date {
+  color: #555;
 }
 
 /* Logo */
