@@ -4,7 +4,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
   <meta name="viewport" content="width=device-width">
   <meta name="description" content="{% if page.meta %}{{ page.meta }}{% else %}{{ site.description }}{% endif %}">
-  <link rel="alternate" type="application/rss+xml" title="Suivre l'activité du blog" href="{{ "/feed.xml" | prepend: site.baseurl | prepend: site.url }}"/>
+  <link rel="alternate" type="application/rss+xml" title="Suivre l'activité du blog (RSS)" href="{{ "/feed.xml" | prepend: site.baseurl | prepend: site.url }}"/>
   <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
   <link rel="shortcut icon" href="{{ "/favicon.ico" | prepend: site.baseurl }}"/>
   <title>{% if page.title %}{{ page.title }} | {% endif %}{{ site.title }}</title>
