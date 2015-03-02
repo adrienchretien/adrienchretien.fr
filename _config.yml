@@ -23,12 +23,12 @@ defaults:
       type: "posts"
     values:
       layout: "post"
-      menu-index: 2
+      menu-index: 1
   -
     scope:
       path: "blog"
     values:
-      menu-index: 2
+      menu-index: 1
 
 # Build settings
 markdown: kramdown
