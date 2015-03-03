@@ -1,7 +1,7 @@
 ---
 title: "Keynote de Steve Albini sur l'état de l'industrie musicale"
 date: 2014-11-22 15:51:15 +01:00
-meta: "Keynote très intéressant de Steve Albini sur l'état de l'industrie musicale"
+meta: "Keynote très intéressant de Steve Albini sur l'état de l'industrie musicale."
 external-link: http://youtu.be/Lz_CPzuwSk4
 category: liens
 tag: musique

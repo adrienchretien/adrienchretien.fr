@@ -234,6 +234,11 @@ small,
   margin-top: 9em;
   margin-bottom: 3em;
 }
+@media screen and (max-width: 44em) {
+  #main {
+    margin-top: 7.5em;
+  }
+}
 
 #header {
   position: fixed;
@@ -291,22 +296,27 @@ small,
 /* Two columns content */
 @media screen and (min-width: 73em) {
   .two-columns {
-    float: left;
     width: 50%;
   }
-  .two-columns--first {
+  .two-columns--left {
+    float: left;
     padding-right: 1.5em;
   }
-  .two-columns--second {
+  .two-columns--right {
+    float: right;
     padding-left: 1.5em;
   }
 }
 
 /* Content */
 .content__head {
-  margin-top: 4.5em;
   margin-bottom: 4.5em;
   text-align: center;
+}
+@media screen and (max-width: 44em) {
+  .content__head {
+    margin-bottom: 3em;
+  }
 }
 
 /* Specific layouts

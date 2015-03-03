@@ -1,6 +1,6 @@
 ---
 title: The Distortion of Sound
-meta: 
+meta: "Mon impression sur ce documentaire qui présente la compression du son."
 date: 2014-10-19 15:35 +02:00
 external-link: http://youtu.be/mDZcz-V29_M
 category: liens

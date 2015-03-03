@@ -1,8 +1,8 @@
 <!-- start footer -->
 <footer id="footer" role="contentinfo">
   <div class="container">
-    <p class="mt mb0"><small class="smaller"><a href="#top">Haut de page</a> • <a href="">Plan du site</a> • <a href="/feed.xml">RSS</a> • <a href="https://twitter.com/adrienchretien" rel="me">Twitter</a> • <a href="https://github.com/neol" rel="me">Github</a> • <a href="http://last.fm/user/adrienchretien" rel="me">Last.fm</a></small></p>
-    <p class="mt0"><small class="smaller">Ce site est la propriété d'Adrien Chrétien. Tous droits réservés. <q lang="en"><i>{% capture quote_index %}{{ 'now' | date: '%S' | times: site.footer_quotes.size | divided_by: 60 }}{% endcapture %}{% for quote in site.footer_quotes offset:quote_index limit:1 %}{{ quote }}{% endfor %}</i></q></small></p>
+    <p class="mt mb0"><small class="smaller"><a href="#top">Haut de page</a> • <a href="/feed.xml">RSS</a> • <a href="https://twitter.com/adrienchretien" rel="me">Twitter</a> • <a href="https://github.com/neol" rel="me">Github</a> • <a href="http://last.fm/user/adrienchretien" rel="me">Last.fm</a></small></p>
+    <p class="mt0"><small class="smaller">Ce site est la propriété d'Adrien Chrétien. Tous droits réservés. {% capture quote_index %}{{ 'now' | date: '%S' | times: site.footer_quotes.size | divided_by: 60 }}{% endcapture %}{% for item in site.footer_quotes offset:quote_index limit:1 %}<q lang="{{ item.lang }}"><i>{{ item.quote }}</i></q>{% endfor %}</small></p>
   </div>
 </footer>
 <!-- end footer -->

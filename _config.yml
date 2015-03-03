@@ -6,16 +6,26 @@ lang: fr
 description: "Notes et liens d'un intégrateur web"
 url: "http://achretien.fr"
 
-exclude: [LICENSE, README.md, CNAME, Gemfile, Gemfile.lock]
+exclude: [LICENSE, README.md, CNAME, Gemfile, Gemfile.lock, fontsquirrel_config.txt]
 footer_quotes:
-  - "See you space cowboy…"
-  - "Easy come, easy go…"
-  - "To be continued."
-  - "Do you have a comrade?"
-  - "Life is but a dream…"
-  - "See you space samurai…"
-  - "Are you living in the real world?"
-  - "You're gonna carry that weight."
+  -
+    quote: "See you space cowboy…"
+    lang: "en"
+  -
+    quote: "Easy come, easy go…"
+    lang: "en"
+  -
+    quote: "Do you have a comrade?"
+    lang: "en"
+  -
+    quote: "See you space samurai…"
+    lang: "en"
+  -
+    quote: "Are you living in the real world?"
+    lang: "en"
+  -
+    quote: "Si ça s'pense, c'est qu'ça s'tente !"
+    lang: "fr"
 defaults:
   - 
     scope:

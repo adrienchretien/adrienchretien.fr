@@ -34,7 +34,7 @@ function loadFont(fontName, woffUrl, woff2Url, onlyLoadFontOnSecondPageload) {
     if (storedFontCss && (storedFontUrl === woffUrl || storedFontUrl === woff2Url)) {
         // the css is still in the localStorage
         // AND it was loaded from one of the current URLs
-        
+
         // 4. Applying the font style sheet
         styleElement.textContent = storedFontCss;
     } else {
@@ -51,7 +51,7 @@ function loadFont(fontName, woffUrl, woff2Url, onlyLoadFontOnSecondPageload) {
         request.open('GET', url);
         request.onload = function() {
             if (request.status >= 200 && request.status < 400) {
-                
+
                 // 7. Updating localStorage with the fresh data and applying the font data
                 loSto[localStorageUrlKey] = url;
                 loSto[localStorageCssKey] = request.responseText;

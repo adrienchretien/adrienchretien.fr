@@ -8,20 +8,23 @@ layout: default
     <h1 class="p-name">{{ page.title }}</h1>
   </div>
   <!-- end content__head -->
-  <!-- start two-columns-first -->
-  <aside class="two-columns two-columns--first" role="complementary">
-    <p class="meta-item mb0"><span class="small">Publié le <time class="dt-published" datetime="{{ page.date | date_to_xmlschema }}">{% assign d = page.date | date: "%-d" %}{% case d %}{% when '1' %}{{ d }}er{% else %}{{ d }}{% endcase %} {% assign m = page.date | date: "%-m" %}{% case m %}{% when '1' %}janvier{% when '2' %}février{% when '3' %}mars{% when '4' %}avril{% when '5' %}mai{% when '6' %}juin{% when '7' %}juillet{% when '8' %}août{% when '9' %}septembre{% when '10' %}octobre{% when '11' %}novembre{% when '12' %}décembre{% endcase %} {{ page.date | date: '%Y' }}</time></span></p>
-    <p class="meta-item mt0"><span class="small">Rangé dans&nbsp;: <a class="p-category" href="{{ page.category | prepend: "/blog/" }}">{{ page.category }}</a></span></p>
-  </aside>
-  <!-- end two-columns-first -->
-  <!-- start two-columns-second -->
-  <div class="two-columns two-columns--second e-content">
+  <!-- start two-columns-right -->
+  <div class="two-columns two-columns--right e-content">
     <!-- start e-content -->
     {{ content }}
+    {% if page.category == "liens" %}<p><a href="{{ page.external-link }}">Voir le lien</a></p>{% endif %}
     <!-- end e-content -->
   </div>
-  <!-- end two-columns-second -->
+  <!-- end two-columns-right -->
+    <!-- start two-columns-left -->
+  <aside class="two-columns two-columns--left" role="complementary">
+    <p class="invisible">Informations sur le billet</p>
+    <ul class="list-nostyle">
+      <li class="meta-item"><span class="small">Publié le <time class="dt-published" datetime="{{ page.date | date_to_xmlschema }}">{% assign d = page.date | date: "%-d" %}{% case d %}{% when '1' %}{{ d }}er{% else %}{{ d }}{% endcase %} {% assign m = page.date | date: "%-m" %}{% case m %}{% when '1' %}janvier{% when '2' %}février{% when '3' %}mars{% when '4' %}avril{% when '5' %}mai{% when '6' %}juin{% when '7' %}juillet{% when '8' %}août{% when '9' %}septembre{% when '10' %}octobre{% when '11' %}novembre{% when '12' %}décembre{% endcase %} {{ page.date | date: '%Y' }}</time></span></li>
+      <li class="meta-item"><span class="small">Rangé dans&nbsp;: <a class="p-category" href="{{ page.category | prepend: "/blog/" }}">{{ page.category }}</a></span></li>
+    </ul>
+  </aside>
+  <!-- end two-columns-left -->
 </article>
 <!-- end article -->
-
 {% include pagination.html %}
