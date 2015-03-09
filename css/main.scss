@@ -108,7 +108,15 @@ q:after {
 
 html {
   font-size: 62.5%;
-  font-size: calc(1em * .625);
+  font-size: calc(1em * 0.625);
+}
+
+button,
+.button {
+  padding: .25em .5em;
+  border: 1px solid;
+  border-radius: .2em;
+  cursor: pointer;
 }
 
 img {
@@ -137,7 +145,7 @@ body {
 h1 {
   font-size: 2.5625em;
   line-height: 1.1707;
-  margin-top: 1.1707;
+  margin-top: 1.1707em;
   margin-bottom: .5854em;
 }
 h2 {
@@ -188,6 +196,8 @@ small,
 /******************************************************************
  * Helpers
  ******************************************************************/
+
+.align-center { text-align: center; }
 
 .clearfix:after {
   content: ".";
@@ -323,8 +333,8 @@ small,
  ******************************************************************/
 
 /*.article-intro*/
-  .article-intro__title { margin: 0; }
-  .article-intro__excerpt > p:first-child { margin-top: 1.5em; }
+/*  .article-intro__title { text-align: center; }
+  .article-intro__excerpt > p:first-child { margin-top: 1.5em; }*/
 
 /* Main navigation container */
 /*.nav-container*/
@@ -416,49 +426,21 @@ small,
 }
 @media screen and (min-width: 44em) {
   .nav {
-    /*border-right: 1px solid;*/
     line-height: 0;
   }
     .nav__item {
-      position: relative;
       float: left;
       line-height: 1.5;
-      overflow: hidden;
     }
     .nav__link {
       padding: 1.5em 1em;
-      transition: .35s ease color;
-    }
-    .nav__link:before {
-      content: '';
-      position: absolute;
-      top: 100%;
-      left: 0;
-      height: 100%;
-      width: 100%;
-      border-top: 4px solid;
-      transition: .35s ease all;
-    }
-    .nav__link--active:before,
-    .nav__link:focus:before,
-    .nav__link:hover:before {
-      top: 0;
-    }
-    .nav__link--active:focus:before,
-    .nav__link--active:hover:before {
-      border-top-width: .75em;
-      transition-timing-function: ease-in-out;
+      transition: .3s ease all;
     }
 }
 
 /*input[type="checked"]*/#nav-trigger { display: none; }
 /*label*/#nav-trigger-label {
-  margin: 0;
-  padding: 1.5em 1em;
-  border-left: 1px solid;
-  border-right: 1px solid;
-  text-decoration: none;
-  cursor: pointer;
+  margin: 1.25em 0;
 }
 @media screen and (max-width: 44em) {
   #nav-trigger ~ .nav { display: none; }
@@ -467,6 +449,28 @@ small,
 @media screen and (min-width: 44.01em) {
   #nav-trigger-label { display: none; }
 }
+
+/* Heading decoration */
+.outside-line-through {
+  display: flex;
+}
+  .outside-line-through:after,
+  .outside-line-through:before {
+    display: block;
+    content: "";
+    flex: 1;
+    align-self: center;
+    margin-top: .25em;
+    height: .13em;
+    background-color: currentColor;
+    border-radius: .09em .03em;
+  }
+  .outside-line-through:after {
+    margin-left: .2em;
+  }
+  .outside-line-through:before {
+    margin-right: .2em;
+  }
 
 /* Pagination */
 .pagination {
@@ -521,7 +525,6 @@ small,
   left: 0;
   width: 100%;
   padding: 1.5em 1em;
-  background-color: #fff;
   text-align: center;
 }
 .skip__link:focus,
@@ -595,6 +598,11 @@ h1 { text-shadow: 2px 3px 0 rgba(0, 0, 0, .2); }
 #nav-trigger-label,
 .nav,
 .nav__item { border-color: #d0d0d0; }
+.nav__link:hover,
+.nav__link--active {
+  color: #fff;
+  background-color: #0c4684;
+}
 
 #nav-trigger:checked ~ #nav-trigger-label {
   background-color: #e5e5e5;
@@ -606,30 +614,28 @@ h1 { text-shadow: 2px 3px 0 rgba(0, 0, 0, .2); }
   }
 }
 
+/* Heading decoration */
+.outside-line-through:after,
+.outside-line-through:before {
+  background-color: currentColor;
+}
+
+/* Skip links */
+.skip__link {
+  background-color: #fff;
+}
+
 /* Tag */
 .tag {
   padding: .2em .35em;
-  background-color: #d0d0d0;
+  background-color: #e5e5e5;
   font-size: 0.8em;
   font-style: italic;
 }
 
-/* Others */
 
 
-/* Color swatches */
 
-/*.pal1-red { background-color: #e40428; }
-.pal1-orange { background-color: #f59c00; }
-.pal1-green { background-color: #bccf00; }
-.pal1-blue { background-color: #0bbbef; }
-.pal1-purple { background-color: #5c2483; }
-
-.pal2-blue { background-color: #0c4684; }
-.pal2-lightgreen { background-color: #58b99c; }
-.pal2-darkgreen { background-color: #008566; }
-.pal2-orange { background-color: #e9610b; }
-.pal2-brown { background-color: #783f19; }*/
 
 /******************************************************************
  * States
