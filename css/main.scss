@@ -571,18 +571,18 @@ h4 {
 h1 { text-shadow: 2px 3px 0 rgba(0, 0, 0, .2); }
 
 #header {
-  border-bottom: 1px solid #d0d0d0;
+  border-bottom: 1px solid #e5e5e5;
   background-color: #f8f8f8;
   background-color: rgba(248, 248, 248, .9);
 }
 @media screen and (min-width: 44.01em) {
   #header {
-    box-shadow: 0 0 2px 0 rgba(0, 0, 0, .2);
+    box-shadow: 0 0 2px 0 rgba(0, 0, 0, .1);
   }
 }
 
 #footer {
-  border-top: 1px solid #d0d0d0;
+  border-top: 1px solid #e5e5e5;
 }
 #footer,
 .meta-item,
@@ -599,7 +599,7 @@ h1 { text-shadow: 2px 3px 0 rgba(0, 0, 0, .2); }
 /* Main navigation */
 #nav-trigger-label,
 .nav,
-.nav__item { border-color: #d0d0d0; }
+.nav__item { border-color: #e5e5e5; }
 .nav__link:hover,
 .nav__link--active {
   color: #fff;
@@ -634,11 +634,3 @@ h1 { text-shadow: 2px 3px 0 rgba(0, 0, 0, .2); }
   font-size: 0.8em;
   font-style: italic;
 }
-
-
-
-
-
-/******************************************************************
- * States
- ******************************************************************/
