@@ -428,10 +428,12 @@ small,
 }
 @media screen and (min-width: 44em) {
   .nav {
+    border-left: 1px dashed;
     line-height: 0;
   }
     .nav__item {
       float: left;
+      border-right: 1px dashed;
       line-height: 1.5;
     }
     .nav__link {
@@ -600,11 +602,16 @@ h1 { text-shadow: 2px 3px 0 rgba(0, 0, 0, .2); }
 #nav-trigger-label,
 .nav,
 .nav__item { border-color: #e5e5e5; }
-.nav__link:hover,
-.nav__link--active {
-  color: #fff;
-  background-color: #0c4684;
+
+.nav__link {
+  color: #555;
+  text-transform: uppercase;
 }
+.nav__link:hover {
+  background-color: #0c4684;
+  color: #fff;
+}
+.nav__link--active { color: #0c4684; }
 
 #nav-trigger:checked ~ #nav-trigger-label {
   background-color: #e5e5e5;
