@@ -6,15 +6,16 @@
     <a class="skip__link" href="/a-propos.html#accesskeys">Aller aux raccourcis</a>
   </div>
   <div class="container clearfix">
-    <div class="left">
+    <div class="logo-container">
       <a class="logo" href="/">Adrien Chrétien</a>
     </div>
     <nav role="navigation" class="nav-container">
       <input type="checkbox" id="nav-trigger">
-      <label for="nav-trigger" id="nav-trigger-label" class="button right">Menu</label>
+      <label for="nav-trigger" id="nav-trigger-label" class="button">Menu</label>
       <ul class="nav list-nostyle clearfix" id="menu">
         <li class="nav__item"><a class="nav__link{% if page.menu-index == 1 %} nav__link--active{% endif %}" href="/" accesskey="1">Blog</a></li>
-        <li class="nav__item"><a class="nav__link{% if page.menu-index == 2 %} nav__link--active{% endif %}" href="/a-propos" accesskey="2">À propos</a></li>
+        <li class="nav__item"><a class="nav__link{% if page.menu-index == 2 %} nav__link--active{% endif %}" href="/portfolio" accesskey="2">Portfolio</a></li>
+        <li class="nav__item"><a class="nav__link{% if page.menu-index == 3 %} nav__link--active{% endif %}" href="/a-propos" accesskey="3">À propos</a></li>
       </ul>
     </nav>
   </div>
