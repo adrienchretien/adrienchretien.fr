@@ -1,3 +1,2 @@
 User-agent: *
-Sitemap: http://achretien.fr/sitemap.xml
-Disallow: /patterns/
+Sitemap: http://adrienchretien.fr/sitemap.xml

@@ -1,10 +1,9 @@
 # Site settings
 title: Adrien Chrétien
 author: Adrien Chrétien
-email: contact@achretien.fr
 lang: fr
 description: "Notes et liens d'un intégrateur web"
-url: "http://achretien.fr"
+url: "http://adrienchretien.fr"
 
 exclude: [LICENSE, README.md, CNAME, Gemfile, Gemfile.lock, fontsquirrel_config.txt, style-guide.html]
 footer_quotes:
