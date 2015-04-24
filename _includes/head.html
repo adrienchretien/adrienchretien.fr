@@ -6,12 +6,9 @@
   <meta name="description" content="{% if page.meta %}{{ page.meta }}{% else %}{{ site.description }}{% endif %}">
   <link rel="alternate" type="application/rss+xml" title="Suivre l'activité du blog (RSS)" href="{{ "/feed.xml" | prepend: site.baseurl | prepend: site.url }}"/>
   <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
-  <link rel="icon shortcut" href="data:image/x-icon;base64," type="image/x-icon">
+  <link rel="shortcut icon" href="data:image/x-icon;base64," type="image/x-icon">
   <title>{% if page.title %}{{ page.title }} | {% endif %}{{ site.title }}</title>
 
   <!-- Stylecheets -->
   <link rel="stylesheet" href="{{ "/css/main.css" | prepend: site.baseurl }}" media="screen, print">
-
-  <!-- Webfonts -->
-  <script src="{{ "/js/webfonts.min.js" | prepend: site.baseurl }}"></script>
 </head>

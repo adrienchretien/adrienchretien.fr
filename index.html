@@ -3,48 +3,44 @@ layout: default
 title: Ici et ailleurs
 menu-index: 1
 ---
-<div class="clearfix">
-  <!-- start content__head -->
-  <div class="content__head">
-    <h1>{{ page.title }}</h1>
-  </div>
-  <!-- end content__head -->
-  <!-- start two-columns-left -->
-  <div class="two-columns two-columns--left">
+<div class="content-head">
+  <h1>{{ page.title }}</h1>
+</div>
+
+<div class="content">
+  <div class="inner">
     <h2 class="mt0">Notes</h2>
     <ul class="list-nostyle">
     {% for post in site.categories.notes limit: 8 %}
       <li class="mb">
-        <span class="meta">
+        <div class="meta">
           <time class="date date--inline separator-after dt-published" datetime="{{ post.date | date_to_xmlschema }}">{% assign m = post.date | date: "%-m" %}{{ post.date | date: "%d" }} {% case m %}{% when '1' %}janvier{% when '2' %}février{% when '3' %}mars{% when '4' %}avril{% when '5' %}mai{% when '6' %}juin{% when '7' %}juillet{% when '8' %}août{% when '9' %}septembre{% when '10' %}octobre{% when '11' %}novembre{% when '12' %}décembre{% endcase %} {{ post.date | date: '%Y' }}</time><!--
           --><span class="invisible">, étiqueté : </span>
           <span class="tag">{{ post.tag }}</span>
-        </span>
-        <br>
+        </div>
         <p><a class="p-name u-url" href="{{ post.url | preprend: site.baseurl }}">{{ post.title }}</a></p>
       </li>
     {% endfor %}
     </ul>
-    <a href="/blog/notes/">Voir toutes les notes »</a>
-  </div>
-  <!-- end two-columns-left -->
-  <!-- start two-columns-right -->
-  <div class="two-columns two-columns--right">
-    <h2 class="mt0">Liens</h2>
+    <div class="group">
+      <a class="button button--large" href="/blog/notes/">Voir toutes les notes</a>
+    </div>
+
+    <h2>Liens</h2>
     <ul class="list-nostyle">
     {% for post in site.categories.liens limit: 8 %}
       <li class="mb">
-        <span class="meta">
+        <div class="meta">
           <time class="date date--inline separator-after dt-published" datetime="{{ post.date | date_to_xmlschema }}">{% assign m = post.date | date: "%-m" %}{{ post.date | date: "%d" }} {% case m %}{% when '1' %}janvier{% when '2' %}février{% when '3' %}mars{% when '4' %}avril{% when '5' %}mai{% when '6' %}juin{% when '7' %}juillet{% when '8' %}août{% when '9' %}septembre{% when '10' %}octobre{% when '11' %}novembre{% when '12' %}décembre{% endcase %} {{ post.date | date: '%Y' }}</time><!--
           --><span class="invisible">, étiqueté : </span>
           <span class="tag">{{ post.tag }}</span>
-        </span>
-        <br>
+        </div>
         <p><a class="p-name u-url" href="{{ post.url | preprend: site.baseurl }}">{{ post.title }}</a></p>
       </li>
     {% endfor %}
     </ul>
-    <a href="/blog/liens/">Voir tous les liens »</a>
+    <div class="group">
+      <a class="button button--large" href="/blog/liens/">Voir tous les liens</a>
+    </div>
   </div>
-  <!-- end two-columns-right -->
 </div>

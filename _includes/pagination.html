@@ -1,7 +1,7 @@
 <!-- start pagination -->
 {% assign category = site.categories[page.category] | sort: 'date' %}{% assign category-size = category | size %}
 {% if category-size > 1 %}
-<nav class="pagination-container">
+<nav>
   <p id="paginglabel" class="invisible">Pagination</p>
   <ul class="pagination" aria-labelledby="paginglabel">
   {% for post in category %}
@@ -21,7 +21,5 @@
   {% endfor %}
   </ul>
 </nav>
-{% else %}
-<p class="pagination-unique-item">C'est le premier billet de cette catégorie, revenez sur <a href="/">la page d'introduction du blog</a> pour découvrir d'autres rubriques.</p>
 {% endif %}
 <!-- end pagination -->

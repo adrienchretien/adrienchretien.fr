@@ -4,10 +4,13 @@
 <body>
 {% include header.html %}
 <!-- start main -->
-<main class="container p-main" id="main" role="main" accesskey="s">
+<main class="wrapper p-main" id="main" role="main" accesskey="s">
 {{ content }}
 </main>
 <!-- end main -->
+
 {% include footer.html %}
+<!-- Webfonts -->
+<script src="{{ "/js/webfonts.min.js" | prepend: site.baseurl }}"></script>
 </body>
 </html>
