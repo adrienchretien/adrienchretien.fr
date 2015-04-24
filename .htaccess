@@ -990,3 +990,4 @@ FileETag None
 Header unset Server
 Header unset Cookie
 Header unset Set-Cookie
+Header set Content-Language fr
