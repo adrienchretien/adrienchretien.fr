@@ -6,7 +6,7 @@ lang: fr
 description: "Notes et liens d'un intégrateur web"
 url: "http://achretien.fr"
 
-exclude: [LICENSE, README.md, CNAME, Gemfile, Gemfile.lock, fontsquirrel_config.txt]
+exclude: [LICENSE, README.md, CNAME, Gemfile, Gemfile.lock, fontsquirrel_config.txt, style-guide.html]
 footer_quotes:
   -
     quote: "See you space cowboy…"
@@ -27,7 +27,7 @@ footer_quotes:
     quote: "Si ça se pense, c'est que ça se tente !"
     lang: "fr"
 defaults:
-  - 
+  -
     scope:
       path: ""
       type: "posts"
@@ -50,6 +50,6 @@ gems:
   - jekyll-redirect-from
 
 # Collections
-collections:
-  patterns:
-    output: true
+# collections:
+#   patterns:
+#     output: true

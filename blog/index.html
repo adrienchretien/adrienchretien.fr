@@ -1,45 +1,46 @@
 ---
 layout: default
 title: Ici et ailleurs
+menu-index: 1
 ---
-<div class="clearfix">
-  <!-- start content-head -->
-  <header class="content-head">
-    <h1>{{ page.title }}</h1>
-  </header>
-  <!-- end content-head -->
-  <!-- start two-columns-left -->
-  <div class="two-columns two-columns--left">
+<div class="content-head">
+  <h1>{{ page.title }}</h1>
+</div>
+
+<div class="content">
+  <div class="inner">
     <h2 class="mt0">Notes</h2>
-    {% for post in site.categories.notes limit: 2 %}{% capture day %}{{ post.date | date: '%m%d%Y' }}{% endcapture %}{% capture next-day %}{{ post.next.date | date: '%m%d%Y' }}{% endcapture %}
-    {% if day != next-day %}<time class="date date--stack left dt-published" datetime="{{ post.date | date_to_xmlschema }}">{% assign m = post.date | date: "%-m" %}<span class="date__day">{{ post.date | date: "%d" }}</span> <span class="date__month">{% case m %}{% when '1' %}jan{% when '2' %}fév{% when '3' %}mar{% when '4' %}avr{% when '5' %}mai{% when '6' %}jui{% when '7' %}jul{% when '8' %}aoû{% when '9' %}sep{% when '10' %}oct{% when '11' %}nov{% when '12' %}déc{% endcase %}</span> <span class="date__year">{{ post.date | date: '%Y' }}</span></time>{% endif %}
-    <div class="article-intro ml3_5 h-entry">
-      <h3 class="article-intro__title"><a class="p-name u-url" href="{{ post.url | preprend: site.baseurl }}">{{ post.title }}</a></h3>
-      <div class="article-intro__excerpt p-summary">
-      {{ post.excerpt }}
-      </div>
-    </div>
-    {% endfor %}
-    <p class="ml3_5"><a href="/blog/notes/">Voir toutes les notes »</a></p>
-  </div>
-  <!-- end two-columns-left -->
-  <!-- start two-columns-right -->
-  <div class="two-columns two-columns--right">
-    <h2 class="mt0">Liens</h2>
     <ul class="list-nostyle">
-    {% for post in site.categories.liens limit: 4 %}
+    {% for post in site.categories.notes limit: 8 %}
       <li class="mb">
-        <span class="meta">
+        <div class="meta">
           <time class="date date--inline separator-after dt-published" datetime="{{ post.date | date_to_xmlschema }}">{% assign m = post.date | date: "%-m" %}{{ post.date | date: "%d" }} {% case m %}{% when '1' %}janvier{% when '2' %}février{% when '3' %}mars{% when '4' %}avril{% when '5' %}mai{% when '6' %}juin{% when '7' %}juillet{% when '8' %}août{% when '9' %}septembre{% when '10' %}octobre{% when '11' %}novembre{% when '12' %}décembre{% endcase %} {{ post.date | date: '%Y' }}</time><!--
           --><span class="invisible">, étiqueté : </span>
           <span class="tag">{{ post.tag }}</span>
-        </span>
-        <br>
+        </div>
         <p><a class="p-name u-url" href="{{ post.url | preprend: site.baseurl }}">{{ post.title }}</a></p>
       </li>
     {% endfor %}
     </ul>
-    <a href="/blog/liens/">Voir tous les liens »</a>
+    <div class="group">
+      <a class="button button--large" href="/blog/notes/">Voir toutes les notes</a>
+    </div>
+
+    <h2>Liens</h2>
+    <ul class="list-nostyle">
+    {% for post in site.categories.liens limit: 8 %}
+      <li class="mb">
+        <div class="meta">
+          <time class="date date--inline separator-after dt-published" datetime="{{ post.date | date_to_xmlschema }}">{% assign m = post.date | date: "%-m" %}{{ post.date | date: "%d" }} {% case m %}{% when '1' %}janvier{% when '2' %}février{% when '3' %}mars{% when '4' %}avril{% when '5' %}mai{% when '6' %}juin{% when '7' %}juillet{% when '8' %}août{% when '9' %}septembre{% when '10' %}octobre{% when '11' %}novembre{% when '12' %}décembre{% endcase %} {{ post.date | date: '%Y' }}</time><!--
+          --><span class="invisible">, étiqueté : </span>
+          <span class="tag">{{ post.tag }}</span>
+        </div>
+        <p><a class="p-name u-url" href="{{ post.url | preprend: site.baseurl }}">{{ post.title }}</a></p>
+      </li>
+    {% endfor %}
+    </ul>
+    <div class="group">
+      <a class="button button--large" href="/blog/liens/">Voir tous les liens</a>
+    </div>
   </div>
-  <!-- end two-columns-right -->
 </div>

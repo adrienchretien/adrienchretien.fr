@@ -3,7 +3,7 @@ layout: null
 ---
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  {% for page in site.pages %}{% unless page.url == '/feed.xml' or page.url == '/sitemap.xml' %}
+  {% for page in site.pages %}{% unless page.url contains '.xml' or page.url contains '.css' or page.url contains '404.html' %}
   <url>
     <loc>{{ page.url | prepend: site.baseurl | prepend: site.url }}</loc>
     <lastmod>{% if page.date %}{{ page.date | date_to_xmlschema }}{% else %}{{ site.time | date_to_xmlschema }}{% endif %}</lastmod>
