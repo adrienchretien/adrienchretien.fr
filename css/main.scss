@@ -431,10 +431,13 @@ small,
       line-height: 1.5;
     }
     .nav__link {
+      position: relative;
+      top: 0;
       padding: 1.5em 1em;
-      -webkit-transition: .3s ease all;
-      transition: .3s ease all;
+      -webkit-transition: .2s ease top;
+      transition: .2s ease top;
     }
+    .nav__link:hover { top: .35em; }
 
   .wrapper {
     margin-left: auto;
@@ -520,7 +523,6 @@ small,
  ******************************************************************************/
 
 button:hover, .button:hover { background-color: #0c4684; }
-.nav__link:hover { background-color: #0c4684; }
 
 html { background-color: #f0f0f0; }
 
@@ -559,7 +561,6 @@ kbd { border-color: #555; }
 .pagination__item { color: #555; }
 
 button:hover, .button:hover { color: #fff; }
-.nav__link:hover { color: #fff; }
 
 body { color: #393939; }
 
