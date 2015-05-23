@@ -2,15 +2,23 @@
 <html lang="{{ site.lang }}" id="top">
 {% include head.html %}
 <body>
+<!-- start skip -->
+<div class="skip">
+  <a class="skip__link align-center" href="#menu">Aller au menu</a>
+  <a class="skip__link align-center" href="#main">Aller au contenu</a>
+  <a class="skip__link align-center" href="/a-propos.html#accesskeys">Aller aux raccourcis</a>
+</div>
+<!-- end skip -->
+<!-- start header -->
 {% include header.html %}
+<!-- end header -->
 <!-- start main -->
 <main class="wrapper p-main" id="main" role="main" accesskey="s">
 {{ content }}
 </main>
 <!-- end main -->
-
+<!-- start footer -->
 {% include footer.html %}
-<!-- Webfonts -->
-<script src="{{ "/js/webfonts.min.js" | prepend: site.baseurl }}"></script>
+<!-- end footer -->
 </body>
 </html>
