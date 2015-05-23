@@ -11,7 +11,8 @@
   <title>{% if page.title %}{{ page.title }} | {% endif %}{{ site.title }}</title>
 
   <!-- Stylesheets -->
-  <link rel="stylesheet" href="{{ "/css/main.css" | prepend: site.baseurl }}" media="screen, print">
+  <link rel="stylesheet" href="{{ "/css/main.css" | prepend: site.baseurl }}" media="all">
+  <link rel="stylesheet" href="{{ "/css/print.css" | prepend: site.baseurl }}" media="print">
 
   <!-- Webfonts -->
   <script src="{{ "/js/webfonts.min.js" | prepend: site.baseurl }}"></script>

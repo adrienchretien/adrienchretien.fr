@@ -1,11 +1,9 @@
 ---
 layout: default
 ---
-<div class="content-head">
+<div class="wrapper">
   <h1>Archives des {{ page.title | downcase }}</h1>
-</div>
 
-<div class="content">
   <div class="inner">
   {% if site.categories[page.category] %}
   {% for post in site.categories[page.category] %}

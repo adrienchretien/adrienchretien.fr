@@ -1,0 +1,35 @@
+body {
+  width: auto!important;
+  margin: auto!important;
+  /*font-family: serif;*/
+  font-size: 10pt;
+  background-color: #fff!important;
+  color: #000!important;
+}
+p, h1, h2, h3, h4, h5, h6, blockquote, ul, ol {
+  color: #000!important;
+  /*margin: auto!important;*/
+}
+.no-print { display: none!important; }
+p, blockquote {
+  orphans: 3;
+  widows: 3;
+}
+blockquote, ul, ol { page-break-inside: avoid; }
+/*h1 { page-break-before: always;  }*/
+h1, h2, h3, caption { page-break-after: avoid; }
+a {
+  color: #000!important;
+  text-decoration: underline!important;
+}
+a[href]:after { content: " [" attr(href) "]"; }
+
+#header { box-shadow: none!important; }
+
+.wrapper,
+.inner {
+  max-width: inherit!important;
+  margin: 0!important;
+  padding: 0!important;
+}
+.logo { margin-top: 0; }

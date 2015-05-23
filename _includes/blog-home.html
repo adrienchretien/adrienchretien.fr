@@ -1,0 +1,16 @@
+<div class="wrapper">
+  <h1>{{ page.title }}</h1>
+
+  <ul class="inner list-nostyle">
+  {% for post in site.posts %}
+    <li class="mb">
+      <div class="meta">
+        <time class="date date--inline separator-after dt-published" datetime="{{ post.date | date_to_xmlschema }}">{% assign m = post.date | date: "%-m" %}{{ post.date | date: "%d" }} {% case m %}{% when '1' %}janvier{% when '2' %}février{% when '3' %}mars{% when '4' %}avril{% when '5' %}mai{% when '6' %}juin{% when '7' %}juillet{% when '8' %}août{% when '9' %}septembre{% when '10' %}octobre{% when '11' %}novembre{% when '12' %}décembre{% endcase %} {{ post.date | date: '%Y' }}</time><!--
+        --><span class="invisible">, étiqueté : </span>
+        <span class="tag">{{ post.tag }}</span>
+      </div>
+      <p><a class="p-name u-url" href="{{ post.url | preprend: site.baseurl }}">{{ post.title }}</a></p>
+    </li>
+  {% endfor %}
+  </ul>
+</div>

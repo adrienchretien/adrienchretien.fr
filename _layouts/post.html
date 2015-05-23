@@ -2,20 +2,17 @@
 layout: default
 ---
 <!-- start article -->
-<article class="clearfix h-entry" role="article">
-  <div class="content-head">
-    <h1 class="p-name">{{ page.title }}</h1>
+<article class="wrapper clearfix h-entry" role="article">
+  <h1 class="p-name">{{ page.title }}</h1>
+
+  <div class="inner">
+  <aside class="align-center" role="complementary">
+    <p class="invisible">Informations sur le billet</p>
+    <p>Le <time class="dt-published" datetime="{{ page.date | date_to_xmlschema }}">{% assign d = page.date | date: "%-d" %}{% case d %}{% when '1' %}{{ d }}er{% else %}{{ d }}{% endcase %} {% assign m = page.date | date: "%-m" %}{% case m %}{% when '1' %}janvier{% when '2' %}février{% when '3' %}mars{% when '4' %}avril{% when '5' %}mai{% when '6' %}juin{% when '7' %}juillet{% when '8' %}août{% when '9' %}septembre{% when '10' %}octobre{% when '11' %}novembre{% when '12' %}décembre{% endcase %} {{ page.date | date: '%Y' }} • <span class="invisible">Rangé dans&nbsp;: </span><a class="p-category" href="{{ page.category | prepend: "/blog/" }}">{{ page.category }}</a></p>
+  </aside>
+    {{ content }}
+    {% if page.category == "liens" %}<p><a href="{{ page.external-link }}">Voir le lien</a></p>{% endif %}
   </div>
-  <div class="content e-content">
-    <div class="inner">
-    <aside class="align-center" role="complementary">
-      <p class="invisible">Informations sur le billet</p>
-      <p>Le <time class="dt-published" datetime="{{ page.date | date_to_xmlschema }}">{% assign d = page.date | date: "%-d" %}{% case d %}{% when '1' %}{{ d }}er{% else %}{{ d }}{% endcase %} {% assign m = page.date | date: "%-m" %}{% case m %}{% when '1' %}janvier{% when '2' %}février{% when '3' %}mars{% when '4' %}avril{% when '5' %}mai{% when '6' %}juin{% when '7' %}juillet{% when '8' %}août{% when '9' %}septembre{% when '10' %}octobre{% when '11' %}novembre{% when '12' %}décembre{% endcase %} {{ page.date | date: '%Y' }} • <span class="invisible">Rangé dans&nbsp;: </span><a class="p-category" href="{{ page.category | prepend: "/blog/" }}">{{ page.category }}</a></p>
-    </aside>
-      {{ content }}
-      {% if page.category == "liens" %}<p><a href="{{ page.external-link }}">Voir le lien</a></p>{% endif %}
-    </div>
-    {% include pagination.html %}
-  </div>
+  {% include pagination.html %}
 </article>
 <!-- end article -->
