@@ -73,6 +73,7 @@ q:after { content: close-quote; }
 
 html {
   font-size: 62.5%;
+  /* IE9-11 bug fix */
   font-size: calc(1em * 0.625);
 }
 
